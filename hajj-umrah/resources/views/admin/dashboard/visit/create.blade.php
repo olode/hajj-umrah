@@ -18,7 +18,7 @@
 
             <div class="card" style="height: 838px;">
                 <div class="card-header">
-                  <h4 class="card-title" id="basic-layout-round-controls">اضافة تحرك بين المدن </h4>
+                  <h4 class="card-title" id="basic-layout-round-controls">اضافة مزار جديد</h4>
                   <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
                   <div class="heading-elements">
                     <ul class="list-inline mb-0">
@@ -54,11 +54,8 @@
                         <div class="row">
                           <div class="col-md-6">
                           <div class="form-group">
-                          <label for="issueinput5">الإتجاه</label>
-                          <select id="issueinput5" name="priority" class="form-control" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Priority" data-original-title="" title="">
-                            <option value="low">مطار جدة - مكة</option>
-                            <option value="medium">مطار ينبع المدينة</option>
-                          </select>
+                          <label for="issueinput2">الاتجاه</label>
+                          <input type="text" id="issueinput2" class="form-control" placeholder="الاتجاه" name="openedby" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="">
                         </div>
 
                           </div>
@@ -73,17 +70,16 @@
 
                           </div>
                         </div>
-                        
                         <div class="row">
                           <div class="col-md-6">
                           <div class="form-group">
-                          <label for="issueinput2">وقت التحرك</label>
-                          <input type="text" id="issueinput2" class="form-control" placeholder="وقت التحرك" name="openedby" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="">
-                        </div>
+                          <label for="issueinput2">وقت المغادرة</label>
+                          <input type="text" id="issueinput2" class="form-control" placeholder="وقت المغادرة" name="openedby" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="">
+                        </div>  
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                              <label for="issueinput4">تاريخ التحرك</label>
+                              <label for="issueinput4">تاريخ المغادرة</label>
                               <input type="date" id="issueinput4" class="form-control" name="datefixed" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Date Fixed" data-original-title="" title="">
                             </div>
                           </div>
@@ -94,7 +90,7 @@
                         </div>
                         <div class="form-group">
                           <label for="issueinput2">رقم الرحلة</label>
-                          <input type="text" id="issueinput2" class="form-control" placeholder="الفندق" name="openedby" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="">
+                          <input type="text" id="issueinput2" class="form-control" placeholder="رقم الرحلة" name="openedby" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="">
                         </div>
                         
                       </div>

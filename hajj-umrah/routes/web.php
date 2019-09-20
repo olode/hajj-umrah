@@ -18,7 +18,7 @@ Route::get('/', function () {
 
 
 
-Route::get('dash', function(){
+Route::get('dashoard', function(){
     return view('admin.dashboard.index');
 
 })->name('dash');
@@ -29,14 +29,13 @@ Route::get('arrival', function(){
 })->name('arrival');
 
 Route::get('departure', function(){
-    return view('admin.dashboard.index');
-
+    return view('admin.dashboard.departure.create');
 })->name('departure');
 
 
 Route::get('visit', function(){
 
-    return view('dashboard/visit/visit-form');
+    return view('admin.dashboard.visit.create');
 
 })->name('visit');
 
@@ -48,8 +47,18 @@ Route::get('between-cities', function(){
 
 
 Route::get('chase-movement', function(){
-    return view('admin.dashboard.chase-movement.chase-movement');
+    return view('admin.dashboard.chase-movement.index');
 
 })->name('chase-movement');
 
+
+Route::get('register-employee', function(){
+    return view('admin.dashboard.employee.create');
+
+})->name('register-employee');
+
+Route::get('employee', function(){
+    return view('admin.dashboard.employee.index');
+
+})->name('employee-index');
 

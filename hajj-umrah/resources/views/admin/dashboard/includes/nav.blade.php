@@ -5,7 +5,7 @@
       <!-- include includes/mixins-->
       <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
         <li class="dropdown nav-item" data-menu="dropdown">
-          <a class="dropdown-toggle nav-link" href="index.html" data-toggle="dropdown"><i class="icon-home"></i>
+          <a class="dropdown-toggle nav-link" href="{{route('dash')}}" ><i class="icon-home"></i>
             <span data-i18n="nav.dash.main">الرئيسية</span>
           </a>
       
@@ -15,11 +15,11 @@
            
             <li data-menu=""><a class="dropdown-item" href="{{route('arrival')}}" data-toggle="dropdown">وصول</a>
             </li>
-            <li data-menu=""><a class="dropdown-item" href="departure-form.html" data-toggle="dropdown">مغادرة</a>
+            <li data-menu=""><a class="dropdown-item" href="{{route('departure')}}" data-toggle="dropdown">مغادرة</a>
             </li>
-            <li data-menu=""><a class="dropdown-item" href="visit-form.html" data-toggle="dropdown">مزارات</a>
+            <li data-menu=""><a class="dropdown-item" href="{{route('visit')}}" data-toggle="dropdown">مزارات</a>
             </li>
-            <li data-menu=""><a class="dropdown-item" href="between-cities.html" data-toggle="dropdown">بين المدن</a>
+            <li data-menu=""><a class="dropdown-item" href="{{route('between-cities')}}" data-toggle="dropdown">بين المدن</a>
             </li>
 
           
@@ -28,9 +28,9 @@
         <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown"><i class="icon-plus"></i><span data-i18n="nav.layouts.temp"> الموظفين</span></a>
           <ul class="dropdown-menu">
  
-            <li data-menu=""><a class="dropdown-item" href="shwo-employee.html" data-toggle="dropdown">عرض</a>
+            <li data-menu=""><a class="dropdown-item" href="{{route('employee-index')}}" data-toggle="dropdown">عرض</a>
             </li>
-            <li data-menu=""><a class="dropdown-item" href="register-employee.html" data-toggle="dropdown">تسجيل</a>
+            <li data-menu=""><a class="dropdown-item" href="{{route('register-employee')}}" data-toggle="dropdown">تسجيل</a>
             </li>
 
         
@@ -44,7 +44,7 @@
           <ul class="dropdown-menu">
           
             
-            <li data-menu=""><a class="dropdown-item" href="chase-movement.html" data-toggle="dropdown">متابعة</a>
+            <li data-menu=""><a class="dropdown-item" href="{{route('chase-movement')}}" data-toggle="dropdown">متابعة</a>
             </li>
             
             

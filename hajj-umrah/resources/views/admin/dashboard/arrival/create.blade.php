@@ -7,44 +7,19 @@
   <!-- Horizontal navigation-->
   <div class="app-content content">
     <div class="content-wrapper">
-      <div class="content-header row">
-        <div class="content-header-left col-md-6 col-12 mb-2">
-          <h3 class="content-header-title">Circle Style</h3>
-          <div class="row breadcrumbs-top">
-            <div class="breadcrumb-wrapper col-12">
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Home</a>
-                </li>
-                <li class="breadcrumb-item"><a href="#">Page</a>
-                </li>
-                <li class="breadcrumb-item active">Form Wizard Circle Steps
-                </li>
-              </ol>
-            </div>
-          </div>
-        </div>
-        <div class="content-header-right col-md-6 col-12">
-          <div class="media width-250 float-right">
-            <media-left class="media-middle">
-              <div id="sp-bar-total-sales"></div>
-            </media-left>
-            <div class="media-body media-right text-right">
-              <h3 class="m-0">$5,668</h3>
-              <span class="text-muted">Sales</span>
-            </div>
-          </div>
-        </div>
-      </div>
+
       <div class="content-body">
 
         <!-- Form wizard with step validation section start -->
         <section id="validation">
-          <div class="row">
-            <div class="col-12">
-              <div class="card">
+          <div class="row justify-content-md-center">
+            <div class="col-6">
+
+
+            <div class="card" style="height: 838px;">
                 <div class="card-header">
-                  <h4 class="card-title">Validation Example</h4>
-                  <a class="heading-elements-toggle"><i class="ft-ellipsis-h font-medium-3"></i></a>
+                  <h4 class="card-title" id="basic-layout-round-controls">اضافة وصول جديد</h4>
+                  <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
                   <div class="heading-elements">
                     <ul class="list-inline mb-0">
                       <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
@@ -56,245 +31,82 @@
                 </div>
                 <div class="card-content collapse show">
                   <div class="card-body">
-                    <form action="#" class="steps-validation wizard-circle">
-                      <!-- Step 1 -->
-                      <h6>Step 1</h6>
-                      <fieldset>
+                    <div class="card-text">
+                    <h4 class="form-section"><i class="ft-user"></i>معلومات الوكيل </h4>
+                    <hr>
+                      <p></p>
+                    </div>
+                    <form class="form">
+
+                    <div class="form-body">
+                        <div class="form-group">
+                          <label for="issueinput1">اسم الوكيل</label>
+                          <input type="text" id="issueinput1" class="form-control" placeholder="اسم الوكيل" name="issuetitle" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Issue Title" data-original-title="" title="">
+                        </div>
+                        <div class="form-group">
+                          <label for="issueinput2">عدد الحجاج</label>
+                          <input type="text" id="issueinput2" class="form-control" placeholder="عدد الحجاج" name="openedby" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="">
+                        </div>
+                        <div class="form-group">
+                          <label for="issueinput2">الفندق</label>
+                          <input type="text" id="issueinput2" class="form-control" placeholder="الفندق" name="openedby" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="">
+                        </div>
                         <div class="row">
                           <div class="col-md-6">
-                            <div class="form-group">
-                              <label for="firstName3">
-                                First Name :
-                                <span class="danger">*</span>
-                              </label>
-                              <input type="text" class="form-control required" id="firstName3" name="firstName">
-                            </div>
+                          <div class="form-group">
+                          <label for="issueinput5">الإتجاه</label>
+                          <select id="issueinput5" name="priority" class="form-control" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Priority" data-original-title="" title="">
+                            <option value="low">مطار جدة - مكة</option>
+                            <option value="medium">مطار ينبع المدينة</option>
+                          </select>
+                        </div>
+
                           </div>
                           <div class="col-md-6">
-                            <div class="form-group">
-                              <label for="lastName3">
-                                Last Name :
-                                <span class="danger">*</span>
-                              </label>
-                              <input type="text" class="form-control required" id="lastName3" name="lastName">
-                            </div>
+                          <div class="form-group">
+                          <label for="issueinput5">اليوم</label>
+                          <select id="issueinput5" name="priority" class="form-control" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Priority" data-original-title="" title="">
+                            <option value="low">السبت</option>
+                            <option value="medium">الأحد</option>
+                          </select>
+                        </div>
+
                           </div>
                         </div>
                         <div class="row">
                           <div class="col-md-6">
-                            <div class="form-group">
-                              <label for="emailAddress5">
-                                Email Address :
-                                <span class="danger">*</span>
-                              </label>
-                              <input type="email" class="form-control required" id="emailAddress5" name="emailAddress">
-                            </div>
+                          <div class="form-group">
+                          <label for="issueinput2">وقت الوصول</label>
+                          <input type="text" id="issueinput2" class="form-control" placeholder="وقت الوصول" name="openedby" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="">
+                        </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                              <label for="location">
-                                Select City :
-                                <span class="danger">*</span>
-                              </label>
-                              <select class="custom-select form-control required" id="location" name="location">
-                                <option value="">Select City</option>
-                                <option value="Amsterdam">Amsterdam</option>
-                                <option value="Berlin">Berlin</option>
-                                <option value="Frankfurt">Frankfurt</option>
-                              </select>
+                              <label for="issueinput4">تاريخ الوصول</label>
+                              <input type="date" id="issueinput4" class="form-control" name="datefixed" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Date Fixed" data-original-title="" title="">
                             </div>
                           </div>
                         </div>
-                        <div class="row">
-                          <div class="col-md-6">
-                            <div class="form-group">
-                              <label for="phoneNumber3">Phone Number :</label>
-                              <input type="tel" class="form-control" id="phoneNumber3">
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                              <label for="date3">Date of Birth :</label>
-                              <input type="date" class="form-control" id="date3">
-                            </div>
-                          </div>
+                        <div class="form-group">
+                          <label for="issueinput2">وقت الاستعداد المسبق</label>
+                          <input type="text" id="issueinput2" class="form-control" placeholder="وقت الاستعداد المسبق" name="openedby" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="">
                         </div>
-                      </fieldset>
-                      <!-- Step 2 -->
-                      <h6>Step 2</h6>
-                      <fieldset>
-                        <div class="row">
-                          <div class="col-md-6">
-                            <div class="form-group">
-                              <label for="proposalTitle3">
-                                Proposal Title :
-                                <span class="danger">*</span>
-                              </label>
-                              <input type="text" class="form-control required" id="proposalTitle3" name="proposalTitle">
-                            </div>
-                            <div class="form-group">
-                              <label for="emailAddress6">
-                                Email Address :
-                                <span class="danger">*</span>
-                              </label>
-                              <input type="email" class="form-control required" id="emailAddress6" name="emailAddress">
-                            </div>
-                            <div class="form-group">
-                              <label for="videoUrl3">Video URL :</label>
-                              <input type="url" class="form-control" id="videoUrl3" name="videoUrl">
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                              <label for="jobTitle5">
-                                Job Title :
-                                <span class="danger">*</span>
-                              </label>
-                              <input type="text" class="form-control required" id="jobTitle5" name="jobTitle">
-                            </div>
-                            <div class="form-group">
-                              <label for="shortDescription3">Short Description :</label>
-                              <textarea name="shortDescription" id="shortDescription3" rows="4" class="form-control"></textarea>
-                            </div>
-                          </div>
+                        <div class="form-group">
+                          <label for="issueinput2">رقم الرحلة</label>
+                          <input type="text" id="issueinput2" class="form-control" placeholder="الفندق" name="openedby" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="">
                         </div>
-                      </fieldset>
-                      <!-- Step 3 -->
-                      <h6>Step 3</h6>
-                      <fieldset>
-                        <div class="row">
-                          <div class="col-md-6">
-                            <div class="form-group">
-                              <label for="eventName3">
-                                Event Name :
-                                <span class="danger">*</span>
-                              </label>
-                              <input type="text" class="form-control required" id="eventName3" name="eventName">
-                            </div>
-                            <div class="form-group">
-                              <label for="eventType3">
-                                Event Type :
-                                <span class="danger">*</span>
-                              </label>
-                              <select class="custom-select form-control required" id="eventType3" name="eventType">
-                                <option value="Banquet">Banquet</option>
-                                <option value="Fund Raiser">Fund Raiser</option>
-                                <option value="Dinner Party">Dinner Party</option>
-                                <option value="Wedding">Wedding</option>
-                              </select>
-                            </div>
-                            <div class="form-group">
-                              <label for="eventLocation3">Event Location :</label>
-                              <select class="custom-select form-control" id="eventLocation3" name="eventLocation">
-                                <option value="">Select City</option>
-                                <option value="Amsterdam">Amsterdam</option>
-                                <option value="Berlin">Berlin</option>
-                                <option value="Frankfurt">Frankfurt</option>
-                              </select>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                              <label for="eventDate">
-                                Event Date - Time :
-                                <span class="danger">*</span>
-                              </label>
-                              <div class='input-group'>
-                                <input type='text' class="form-control datetime required" id="eventDate" name="eventDate"
-                                />
-                                <span class="input-group-addon">
-                                  <span class="ft-calendar"></span>
-                                </span>
-                              </div>
-                            </div>
-                            <div class="form-group">
-                              <label for="eventStatus3">
-                                Event Status :
-                                <span class="danger">*</span>
-                              </label>
-                              <select class="custom-select form-control required" id="eventStatus3" name="eventStatus">
-                                <option value="Planning">Planning</option>
-                                <option value="In Progress">In Progress</option>
-                                <option value="Finished">Finished</option>
-                              </select>
-                            </div>
-                            <div class="form-group">
-                              <label>Requirements :</label>
-                              <div class="c-inputs-stacked">
-                                <div class="d-inline-block custom-control custom-checkbox">
-                                  <input type="checkbox" name="status3" class="custom-control-input" id="staffing3">
-                                  <label class="custom-control-label" for="staffing3">Staffing</label>
-                                </div>
-                                <div class="d-inline-block custom-control custom-checkbox">
-                                  <input type="checkbox" name="status3" class="custom-control-input" id="catering3">
-                                  <label class="custom-control-label" for="catering3">Catering</label>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </fieldset>
-                      <!-- Step 4 -->
-                      <h6>Step 4</h6>
-                      <fieldset>
-                        <div class="row">
-                          <div class="col-md-6">
-                            <div class="form-group">
-                              <label for="meetingName3">
-                                Name of Meeting :
-                                <span class="danger">*</span>
-                              </label>
-                              <input type="text" class="form-control required" id="meetingName3" name="meetingName">
-                            </div>
-                            <div class="form-group">
-                              <label for="meetingLocation3">
-                                Location :
-                                <span class="danger">*</span>
-                              </label>
-                              <input type="text" class="form-control required" id="meetingLocation3" name="meetingLocation">
-                            </div>
-                            <div class="form-group">
-                              <label for="participants3">Names of Participants</label>
-                              <textarea name="participants" id="participants3" rows="4" class="form-control"></textarea>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                              <label for="decisions3">Decisions Reached</label>
-                              <textarea name="decisions" id="decisions3" rows="4" class="form-control"></textarea>
-                            </div>
-                            <div class="form-group">
-                              <label>Agenda Items :</label>
-                              <div class="c-inputs-stacked">
-                                <div class="custom-control custom-checkbox">
-                                  <input type="checkbox" name="agenda3" class="custom-control-input" id="item31">
-                                  <label class="custom-control-label" for="item31">1st item</label>
-                                </div>
-                                <div class="custom-control custom-checkbox">
-                                  <input type="checkbox" name="agenda3" class="custom-control-input" id="item32">
-                                  <label class="custom-control-label" for="item32">2nd item</label>
-                                </div>
-                                <div class="custom-control custom-checkbox">
-                                  <input type="checkbox" name="agenda3" class="custom-control-input" id="item33">
-                                  <label class="custom-control-label" for="item33">3rd item</label>
-                                </div>
-                                <div class="custom-control custom-checkbox">
-                                  <input type="checkbox" name="agenda3" class="custom-control-input" id="item34">
-                                  <label class="custom-control-label" for="item34">4th item</label>
-                                </div>
-                                <div class="custom-control custom-checkbox">
-                                  <input type="checkbox" name="agenda3" class="custom-control-input" id="item35">
-                                  <label class="custom-control-label" for="item35">5th item</label>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </fieldset>
+                        
+                      </div>
+                      <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">
+                          <i class="fa fa-check-square-o"></i> حفظ
+                        </button>
+                      </div>
                     </form>
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
         </section>
