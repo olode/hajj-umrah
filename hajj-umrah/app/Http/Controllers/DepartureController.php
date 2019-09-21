@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Model\Direction;
+
 
 class DepartureController extends Controller 
 {
@@ -24,7 +26,8 @@ class DepartureController extends Controller
    */
   public function create()
   {
-    
+    $directions = Direction::Select('id', 'name')->get();
+    return view('admin.dashboard.departure.create')->with('directions', $directions);
   }
 
   /**

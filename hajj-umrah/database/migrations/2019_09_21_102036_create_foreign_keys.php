@@ -9,7 +9,7 @@ class CreateForeignKeys extends Migration {
 	public function up()
 	{
 		Schema::table('arrivals', function(Blueprint $table) {
-			$table->foreign('wakeel_id')->references('id')->on('wakeel')
+			$table->foreign('trip_info_id')->references('id')->on('trip_info')
 						->onDelete('cascade')
 						->onUpdate('cascade');
 		});
@@ -19,17 +19,17 @@ class CreateForeignKeys extends Migration {
 						->onUpdate('no action');
 		});
 		Schema::table('transport_companies', function(Blueprint $table) {
-			$table->foreign('wakeel_id')->references('id')->on('wakeel')
+			$table->foreign('wakeel_id')->references('id')->on('trip_info')
 						->onDelete('cascade')
 						->onUpdate('cascade');
 		});
 		Schema::table('representatives', function(Blueprint $table) {
-			$table->foreign('wakeel_id')->references('id')->on('wakeel')
+			$table->foreign('trip_info_id')->references('id')->on('trip_info')
 						->onDelete('cascade')
 						->onUpdate('cascade');
 		});
 		Schema::table('departures', function(Blueprint $table) {
-			$table->foreign('wakeel_id')->references('id')->on('wakeel')
+			$table->foreign('trip_info_id')->references('id')->on('trip_info')
 						->onDelete('cascade')
 						->onUpdate('cascade');
 		});
@@ -39,7 +39,7 @@ class CreateForeignKeys extends Migration {
 						->onUpdate('restrict');
 		});
 		Schema::table('mazarat', function(Blueprint $table) {
-			$table->foreign('wakeel_id')->references('id')->on('wakeel')
+			$table->foreign('trip_info_id')->references('id')->on('trip_info')
 						->onDelete('cascade')
 						->onUpdate('cascade');
 		});
@@ -47,6 +47,11 @@ class CreateForeignKeys extends Migration {
 			$table->foreign('direction_id')->references('id')->on('directions')
 						->onDelete('no action')
 						->onUpdate('no action');
+		});
+		Schema::table('between_cities', function(Blueprint $table) {
+			$table->foreign('trip_info_id')->references('id')->on('trip_info')
+						->onDelete('cascade')
+						->onUpdate('cascade');
 		});
 		Schema::table('between_cities', function(Blueprint $table) {
 			$table->foreign('direction_id')->references('id')->on('directions')
@@ -58,7 +63,7 @@ class CreateForeignKeys extends Migration {
 	public function down()
 	{
 		Schema::table('arrivals', function(Blueprint $table) {
-			$table->dropForeign('arrivals_wakeel_id_foreign');
+			$table->dropForeign('arrivals_trip_info_id_foreign');
 		});
 		Schema::table('arrivals', function(Blueprint $table) {
 			$table->dropForeign('arrivals_direction_id_foreign');
@@ -67,19 +72,22 @@ class CreateForeignKeys extends Migration {
 			$table->dropForeign('transport_companies_wakeel_id_foreign');
 		});
 		Schema::table('representatives', function(Blueprint $table) {
-			$table->dropForeign('representatives_wakeel_id_foreign');
+			$table->dropForeign('representatives_trip_info_id_foreign');
 		});
 		Schema::table('departures', function(Blueprint $table) {
-			$table->dropForeign('departures_wakeel_id_foreign');
+			$table->dropForeign('departures_trip_info_id_foreign');
 		});
 		Schema::table('departures', function(Blueprint $table) {
 			$table->dropForeign('departures_direction_id_foreign');
 		});
 		Schema::table('mazarat', function(Blueprint $table) {
-			$table->dropForeign('mazarat_wakeel_id_foreign');
+			$table->dropForeign('mazarat_trip_info_id_foreign');
 		});
 		Schema::table('mazarat', function(Blueprint $table) {
 			$table->dropForeign('mazarat_direction_id_foreign');
+		});
+		Schema::table('between_cities', function(Blueprint $table) {
+			$table->dropForeign('between_cities_trip_info_id_foreign');
 		});
 		Schema::table('between_cities', function(Blueprint $table) {
 			$table->dropForeign('between_cities_direction_id_foreign');

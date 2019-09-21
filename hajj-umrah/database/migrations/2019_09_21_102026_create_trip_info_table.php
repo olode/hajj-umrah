@@ -3,19 +3,19 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateWakeelTable extends Migration {
+class CreateTripInfoTable extends Migration {
 
 	public function up()
 	{
-		Schema::create('wakeel', function(Blueprint $table) {
+		Schema::create('trip_info', function(Blueprint $table) {
 			$table->increments('id');
 			$table->timestamps();
-			$table->string('name', 50)->nullable();
+			$table->string('info', 100)->nullable();
 		});
 	}
 
 	public function down()
 	{
-		Schema::drop('wakeel');
+		Schema::drop('trip_info');
 	}
 }
