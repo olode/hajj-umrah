@@ -1,6 +1,6 @@
 <?php
 
-namespace App/Model;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -13,7 +13,7 @@ class TransportCompany extends Model
 
     public function wakeel()
     {
-        return $this->belongsTo('App/Model\Wakeel');
+        return $this->belongsTo('App/Model\TripInfo');
     }
 
 }

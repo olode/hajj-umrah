@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Model\Direction;
 
-class ArrivalController extends Controller 
+class TripInfoController extends Controller 
 {
 
   /**
@@ -25,10 +24,7 @@ class ArrivalController extends Controller
    */
   public function create()
   {
-
-    $directions = Direction::Select('id', 'name')->get();
     
-    return view('admin.dashboard.arrival.create')->with('directions', $directions);
   }
 
   /**

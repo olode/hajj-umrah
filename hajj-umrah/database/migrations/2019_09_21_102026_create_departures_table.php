@@ -10,7 +10,8 @@ class CreateDeparturesTable extends Migration {
 		Schema::create('departures', function(Blueprint $table) {
 			$table->increments('id');
 			$table->timestamps();
-			$table->integer('wakeel_id')->unsigned();
+			$table->integer('trip_info_id')->unsigned();
+			$table->string('wakeel_name', 50)->nullable();
 			$table->integer('pilgram_count');
 			$table->string('nationality', 50);
 			$table->string('hotel', 50)->nullable();

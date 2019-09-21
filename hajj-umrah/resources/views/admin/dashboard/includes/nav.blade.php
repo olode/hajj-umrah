@@ -13,13 +13,13 @@
         <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown"><i class="icon-note"></i><span data-i18n="nav.templates.main">تسجيل التحركات</span></a>
           <ul class="dropdown-menu">
            
-            <li data-menu=""><a class="dropdown-item" href="{{route('arrival')}}" data-toggle="dropdown">وصول</a>
+            <li data-menu=""><a class="dropdown-item" href="{{route('arrival.create')}}" data-toggle="dropdown">وصول</a>
             </li>
-            <li data-menu=""><a class="dropdown-item" href="{{route('departure')}}" data-toggle="dropdown">مغادرة</a>
+            <li data-menu=""><a class="dropdown-item" href="{{route('departure.create')}}" data-toggle="dropdown">مغادرة</a>
             </li>
-            <li data-menu=""><a class="dropdown-item" href="{{route('visit')}}" data-toggle="dropdown">مزارات</a>
+            <li data-menu=""><a class="dropdown-item" href="{{route('mazarat.create')}}" data-toggle="dropdown">مزارات</a>
             </li>
-            <li data-menu=""><a class="dropdown-item" href="{{route('between-cities')}}" data-toggle="dropdown">بين المدن</a>
+            <li data-menu=""><a class="dropdown-item" href="{{route('betweencity.create')}}" data-toggle="dropdown">بين المدن</a>
             </li>
 
           
