@@ -9,7 +9,7 @@ class BetweenCity extends Model
 
     protected $table = 'between_cities';
     public $timestamps = true;
-    protected $fillable = array('wakeel_name', 'pilgram_count', 'nationality', 'hotel', 'direction_id', 'move_time', 'move_date', 'journey_number', 'advance_standby', 'day');
+    protected $fillable = array('trip_info_id', 'wakeel_name', 'pilgram_count', 'nationality', 'hotel', 'direction_id', 'move_time', 'move_date', 'journey_number', 'advance_standby', 'day');
 
     public function direction()
     {

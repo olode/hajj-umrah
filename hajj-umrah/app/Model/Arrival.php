@@ -9,11 +9,11 @@ class Arrival extends Model
 
     protected $table = 'arrivals';
     public $timestamps = true;
-    protected $fillable = array('wakeel_id', 'pilgram_count', 'nationality', 'hotel', 'direction_id', 'arrival_time', 'arrival_date', 'journey_number', 'advance_standby', 'day');
+    protected $fillable = array('trip_info_id', 'wakeel_name', 'pilgram_count', 'nationality', 'hotel', 'direction_id', 'arrival_time', 'arrival_date', 'journey_number', 'advance_standby', 'day');
 
     public function wakeel()
     {
-        return $this->belongsTo('App/Model\Wakeel');
+        return $this->belongsTo('App/Model\TripInfo');
     }
 
     public function direction()

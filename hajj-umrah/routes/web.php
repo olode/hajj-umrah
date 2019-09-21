@@ -15,6 +15,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource('arrival', 'ArrivalController');
+Route::resource('transportcompany', 'TransportCompanyController');
+Route::resource('representative', 'RepresentativeController');
+Route::resource('direction', 'DirectionController');
+Route::resource('departure', 'DepartureController');
+Route::resource('mazarat', 'MazaratController');
+Route::resource('betweencity', 'BetweenCityController');
+Route::resource('tripinfo', 'TripInfoController');
+
 
 
 
@@ -61,4 +70,6 @@ Route::get('employee', function(){
     return view('admin.dashboard.employee.index');
 
 })->name('employee-index');
+
+
 
