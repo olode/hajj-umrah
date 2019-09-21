@@ -32,27 +32,27 @@ Route::get('dashoard', function(){
 
 })->name('dash');
 
-Route::get('arrival', function(){
-    return view('admin.dashboard.arrival.create');
+// Route::get('arrival', function(){
+//     return view('admin.dashboard.arrival.create');
 
-})->name('arrival');
+// })->name('arrival');
 
-Route::get('departure', function(){
-    return view('admin.dashboard.departure.create');
-})->name('departure');
-
-
-Route::get('visit', function(){
-
-    return view('admin.dashboard.visit.create');
-
-})->name('visit');
+// Route::get('departure', function(){
+//     return view('admin.dashboard.departure.create');
+// })->name('departure');
 
 
-Route::get('between-cities', function(){
-    return view('admin.dashboard.between-cities.creat');
+// Route::get('visit', function(){
 
-})->name('between-cities');
+//     return view('admin.dashboard.visit.create');
+
+// })->name('visit');
+
+
+// Route::get('between-cities', function(){
+//     return view('admin.dashboard.between-cities.creat');
+
+// })->name('between-cities');
 
 
 Route::get('chase-movement', function(){

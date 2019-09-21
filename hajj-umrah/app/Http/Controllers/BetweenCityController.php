@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Model\Direction;
+
 
 class BetweenCityController extends Controller 
 {
@@ -25,6 +27,9 @@ class BetweenCityController extends Controller
   public function create()
   {
     
+    $directions = Direction::Select('id', 'name')->get();
+    
+    return view('admin.dashboard.between-cities.creat')->with('directions', $directions);
   }
 
   /**
