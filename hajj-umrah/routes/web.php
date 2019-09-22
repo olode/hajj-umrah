@@ -23,11 +23,12 @@ Route::resource('departure', 'DepartureController');
 Route::resource('mazarat', 'MazaratController');
 Route::resource('betweencity', 'BetweenCityController');
 Route::resource('tripinfo', 'TripInfoController');
+Route::resource('tracking-movement', 'TrackingMovementController');
 
 
 
 
-Route::get('dashoard', function(){
+Route::get('dashboard', function(){
     return view('admin.dashboard.index');
 
 })->name('dash');
@@ -55,10 +56,10 @@ Route::get('dashoard', function(){
 // })->name('between-cities');
 
 
-Route::get('chase-movement', function(){
-    return view('admin.dashboard.chase-movement.index');
+// Route::get('chase-movement', function(){
+//     return view('admin.dashboard.chase-movement.index');
 
-})->name('chase-movement');
+// })->name('chase-movement');
 
 
 Route::get('register-employee', function(){

@@ -42,7 +42,7 @@ class BetweenCityController extends Controller
   public function store(Request $request)
   {
     
-    $last_inserted_id = TripInfo::create(['info'=>( TripInfo::Select('id')->latest()->first() != null ? TripInfo::Select('id')->latest()->first()->id + 1 : 1 ) .'-'.random_int(1000,9999)]);
+    $last_inserted_id = TripInfo::create(['info'=>( TripInfo::Select('id')->latest()->first() != null ? TripInfo::Select('id')->latest()->first()->id + 1 : 1 ) .'-'.random_int(1000,9999),'type'=> 'بين المدن']);
     BetweenCity::create(['trip_info_id'=>$last_inserted_id->id, 
                     'wakeel_name'=>$request->wakeel_name, 
                     'nationality'=>$request->nationality, 

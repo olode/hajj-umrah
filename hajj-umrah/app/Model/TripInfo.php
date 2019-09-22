@@ -9,6 +9,6 @@ class TripInfo extends Model
 
     protected $table = 'trip_info';
     public $timestamps = true;
-    protected $fillable = array('info');
+    protected $fillable = array('info', 'type');
 
 }

@@ -13,7 +13,12 @@ class BetweenCity extends Model
 
     public function direction()
     {
-        return $this->belongsTo('App/Model\Direction');
+        return $this->belongsTo('App\Model\Direction');
+    }
+
+    public function trip()
+    {
+        return $this->belongsTo('App\Model\TripInfo','trip_info_id');
     }
 
 }
