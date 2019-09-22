@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class WakeelController extends Controller 
+class TripTypeController extends Controller 
 {
 
   /**

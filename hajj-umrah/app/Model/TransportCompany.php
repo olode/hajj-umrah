@@ -9,11 +9,7 @@ class TransportCompany extends Model
 
     protected $table = 'transport_companies';
     public $timestamps = true;
-    protected $fillable = array('name', 'phone', 'driver_name', 'driver_id', 'car_plate', 'wakeel_id');
+    protected $fillable = array('name', 'phone', 'driver_name', 'driver_id', 'car_plate', 'trip_id');
 
-    public function wakeel()
-    {
-        return $this->belongsTo('App/Model\TripInfo');
-    }
 
 }

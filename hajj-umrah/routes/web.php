@@ -15,16 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('arrival', 'ArrivalController');
 Route::resource('transportcompany', 'TransportCompanyController');
 Route::resource('representative', 'RepresentativeController');
 Route::resource('direction', 'DirectionController');
-Route::resource('departure', 'DepartureController');
-Route::resource('mazarat', 'MazaratController');
-Route::resource('betweencity', 'BetweenCityController');
 Route::resource('tripinfo', 'TripInfoController');
 Route::resource('tracking-movement', 'TrackingMovementController');
 
+Route::resource('trip', 'TripController');
+Route::resource('triptype', 'TripTypeController');
 
 
 
@@ -32,35 +30,6 @@ Route::get('dashboard', function(){
     return view('admin.dashboard.index');
 
 })->name('dash');
-
-// Route::get('arrival', function(){
-//     return view('admin.dashboard.arrival.create');
-
-// })->name('arrival');
-
-// Route::get('departure', function(){
-//     return view('admin.dashboard.departure.create');
-// })->name('departure');
-
-
-// Route::get('visit', function(){
-
-//     return view('admin.dashboard.visit.create');
-
-// })->name('visit');
-
-
-// Route::get('between-cities', function(){
-//     return view('admin.dashboard.between-cities.creat');
-
-// })->name('between-cities');
-
-
-// Route::get('chase-movement', function(){
-//     return view('admin.dashboard.chase-movement.index');
-
-// })->name('chase-movement');
-
 
 Route::get('register-employee', function(){
     return view('admin.dashboard.employee.create');
