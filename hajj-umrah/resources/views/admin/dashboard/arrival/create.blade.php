@@ -36,8 +36,8 @@
                     <hr>
                       <p></p>
                     </div>
-                    <form class="form">
-
+                    <form class="form" method="POST" action="{{route('arrival.store')}}">
+                        @csrf
                     <div class="form-body">
                         <div class="form-group">
                           <label for="issueinput1">اسم الوكيل</label>

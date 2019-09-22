@@ -12,8 +12,8 @@ class CreateDeparturesTable extends Migration {
 			$table->timestamps();
 			$table->integer('trip_info_id')->unsigned();
 			$table->string('wakeel_name', 50)->nullable();
-			$table->integer('pilgram_count');
-			$table->string('nationality', 50);
+			$table->integer('pilgram_count')->nullable();
+			$table->string('nationality', 50)->nullable();
 			$table->string('hotel', 50)->nullable();
 			$table->integer('direction_id')->unsigned();
 			$table->string('departure_time', 50)->nullable();

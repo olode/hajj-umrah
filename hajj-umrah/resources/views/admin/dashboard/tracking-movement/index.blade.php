@@ -33,103 +33,88 @@
                 </div>
                 <div class="card-content collapse show">
                   <div class="card-body card-dashboard">
-                    <p class="card-text"> متابعة تحركات لتاريخ ٢٠١٩/٠٨/٠٥</p>
+                    <p class="card-text"> متابعة تحركات تاريخ  {{date('Y-m-d')}}</p>
                     <table class="table table-striped table-bordered dom-jQuery-events">
                       <thead>
                         <tr>
                           <th>اليوم</th>
                           <th>الساعة</th>
                           <th>الحركة</th>
+                          <th>الاتجاه</th>
                           <th>الوكيل</th>
                           <th>اضافة معلومات شركة النقل والمندوب</th>
                         </tr>
                       </thead>
                       <tbody>
+                        @foreach($arrivals as $arrival)
+                        
+
                         <tr>
-                          <td>الأحد</td>
-                          <td>5:30</td>
-                          <td>مزارات</td>
-                          <td>وكالة ناسا</td>
+                          <td>{{$arrival->day}}</td>
+                          <td>{{$arrival->arrival_time}}</td>
+                          <td>{{$arrival->trip->type}}</td>
+                          <td>{{$arrival->direction->name}}</td>
+                          <td>{{$arrival->wakeel_name}}</td>
                           <td>
-                          <button class="badge badge-info">النقل والمندوب</button>
+                            
+                              @include('admin.dashboard.tracking-movement.form-model')
+
+                          <button  id="arrival" data-arrivid="{{$arrival->id}}" class="badge badge-info" data-toggle="modal" data-target="#myModal">النقل والمندوب</button>
+
                           <!-- <button class="badge badge-danger">حذف</button> -->
                           </td>
                         </tr>
+                        @endforeach
+                        @foreach($departures as $departure)
 
                         <tr>
-                          <td>الأحد</td>
-                          <td>5:30</td>
-                          <td>مزارات</td>
-                          <td>وكالة ناسا</td>
+                          <td>{{$departure->day}}</td>
+                          <td>{{$departure->arrival_time}}</td>
+                          <td>{{$departure->trip->type}}</td>
+                          <td>{{$departure->direction->name}}</td>
+                          <td>{{$departure->wakeel_name}}</td>
                           <td>
-                          <button class="badge badge-info">النقل والمندوب</button>
+                          <button class="badge badge-info" data-toggle="modal" data-target="#myModal">النقل والمندوب</button>
+
+                          <!-- <button class="badge badge-danger">حذف</button> -->
                           </td>
                         </tr>
-                        <tr>
-                          <td>الأحد</td>
-                          <td>5:30</td>
-                          <td>مزارات</td>
-                          <td>وكالة ناسا</td>
-                          <td>
-                          <button class="badge badge-info">النقل والمندوب</button>
-                          </td>
-                        </tr>
+                        @endforeach
+                        @foreach($mazarat as $mazar)
 
                         <tr>
-                          <td>الأحد</td>
-                          <td>5:30</td>
-                          <td>مزارات</td>
-                          <td>وكالة ناسا</td>
+                          <td>{{$mazar->day}}</td>
+                          <td>{{$mazar->mazar_time}}</td>
+                          <td>{{$mazar->trip->type}}</td>
+                          <td>{{$mazar->direction->name}}</td>
+                          <td>{{$mazar->wakeel_name}}</td>
                           <td>
-                          <button class="badge badge-info">النقل والمندوب</button>
+                          <button  class="badge badge-info" data-toggle="modal" data-target="#myModal">النقل والمندوب</button>
+                          <!-- <button class="badge badge-danger">حذف</button> -->
                           </td>
                         </tr>
+                        @endforeach
+                        @foreach($between_cities as $between_city)
 
                         <tr>
-                          <td>الأحد</td>
-                          <td>5:30</td>
-                          <td>مزارات</td>
-                          <td>وكالة ناسا</td>
+                          <td>{{$between_city->day}}</td>
+                          <td>{{$between_city->move_time}}</td>
+                          <td>{{$between_city->trip->type}}</td>
+                          <td>{{$between_city->direction->name}}</td>
+                          <td>{{$between_city->wakeel_name}}</td>
                           <td>
-                          <button class="badge badge-info">النقل والمندوب</button>
+                          <button class="badge badge-info" data-toggle="modal" data-target="#myModal">النقل والمندوب</button>
+                          <!-- <button class="badge badge-danger">حذف</button> -->
                           </td>
                         </tr>
-
-                        <tr>
-                          <td>الأحد</td>
-                          <td>5:30</td>
-                          <td>مزارات</td>
-                          <td>وكالة ناسا</td>
-                          <td>
-                          <button class="badge badge-info">النقل والمندوب</button>
-                          </td>
-                        </tr>
-
-                        <tr>
-                          <td>الأحد</td>
-                          <td>5:30</td>
-                          <td>مزارات</td>
-                          <td>وكالة ناسا</td>
-                          <td>
-                          <button class="badge badge-info">النقل والمندوب</button>
-                          </td>
-                        </tr>
-
-                        <tr>
-                          <td>الأحد</td>
-                          <td>5:30</td>
-                          <td>مزارات</td>
-                          <td>وكالة ناسا</td>
-                          <td>
-                          <button class="badge badge-info">النقل والمندوب</button>
-                          </td>
-                        </tr>
+                        @endforeach
                         </tbody>
                       <tfoot>
                       <tr>
                           <th>اليوم</th>
                           <th>الساعة</th>
                           <th>الحركة</th>
+                          <th>الاتجاه</th>
                           <th>الوكيل</th>
                           <th>اضافة معلومات شركة النقل والمندوب</th>
                         </tr>
@@ -146,7 +131,6 @@
       </div>
     </div>
   </div>
-
 
 
 
