@@ -14,7 +14,7 @@ class CreateRepresentativesTable extends Migration {
 			$table->integer('phone');
 			$table->string('recipient', 50);
 			$table->string('terminator', 50);
-			$table->integer('trip_info_id')->unsigned()->nullable();
+			$table->integer('trip_id')->unsigned()->nullable();
 		});
 	}
 
