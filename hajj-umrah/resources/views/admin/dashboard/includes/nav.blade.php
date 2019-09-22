@@ -44,7 +44,7 @@
           <ul class="dropdown-menu">
           
             
-            <li data-menu=""><a class="dropdown-item" href="{{route('chase-movement')}}" data-toggle="dropdown">متابعة</a>
+            <li data-menu=""><a class="dropdown-item" href="{{route('tracking-movement.index')}}" data-toggle="dropdown">متابعة</a>
             </li>
             
             

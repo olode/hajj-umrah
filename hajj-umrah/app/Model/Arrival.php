@@ -13,12 +13,17 @@ class Arrival extends Model
 
     public function wakeel()
     {
-        return $this->belongsTo('App/Model\TripInfo');
+        return $this->belongsTo('App\Model\TripInfo');
     }
 
     public function direction()
     {
-        return $this->belongsTo('App/Model\Direction');
+        return $this->belongsTo('App\Model\Direction');
+    }
+
+    public function trip()
+    {
+        return $this->belongsTo('App\Model\TripInfo','trip_info_id');
     }
 
 }
