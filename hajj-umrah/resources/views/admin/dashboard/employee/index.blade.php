@@ -49,72 +49,19 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>عباس</td>
-                          <td>0599999999</td>
-                          <td>t@t.com</td>
-                          <td>abaas</td>
-                          <td>superAdmin</td>
-                          <td>
-                          <button class="badge badge-warning">تعديل</button>
-                          <button class="badge badge-danger">حذف</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>عباس</td>
-                          <td>0599999999</td>
-                          <td>t@t.com</td>
-                          <td>abaas</td>
-                          <td>superAdmin</td>
-                          <td>
-                          <button class="badge badge-warning">تعديل</button>
-                          <button class="badge badge-danger">حذف</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>عباس</td>
-                          <td>0599999999</td>
-                          <td>t@t.com</td>
-                          <td>abaas</td>
-                          <td>superAdmin</td>
-                          <td>
-                          <button class="badge badge-warning">تعديل</button>
-                          <button class="badge badge-danger">حذف</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>عباس</td>
-                          <td>0599999999</td>
-                          <td>t@t.com</td>
-                          <td>abaas</td>
-                          <td>superAdmin</td>
-                          <td>
-                          <button class="badge badge-warning">تعديل</button>
-                          <button class="badge badge-danger">حذف</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>عباس</td>
-                          <td>0599999999</td>
-                          <td>t@t.com</td>
-                          <td>abaas</td>
-                          <td>superAdmin</td>
-                          <td>
-                          <button class="badge badge-warning">تعديل</button>
-                          <button class="badge badge-danger">حذف</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>عباس</td>
-                          <td>0599999999</td>
-                          <td>t@t.com</td>
-                          <td>abaas</td>
-                          <td>superAdmin</td>
-                          <td>
-                          <button class="badge badge-warning">تعديل</button>
-                          <button class="badge badge-danger">حذف</button>
-                          </td>
-                        </tr>
+                        @foreach ($employies as $employee)  
+                          <tr>
+                            <td>{{$employee->name}}</td>
+                            <td>{{$employee->phone_number}}</td>
+                            <td>{{$employee->email}}</td>
+                            <td>{{$employee->username}}</td>
+                            <td>{{$employee->rule_id}}</td>
+                            <td>
+                            <form action="{{ route('') }}" method="post"><button type="submit" class="badge badge-warning">تعديل</button></form>
+                            <button class="badge badge-danger">حذف</button>
+                            </td>
+                          </tr>
+                        @endforeach
                       </tbody>
                       <tfoot>
                         <tr>
