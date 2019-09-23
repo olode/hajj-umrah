@@ -20,12 +20,16 @@ Route::resource('representative', 'RepresentativeController');
 Route::resource('direction', 'DirectionController');
 Route::resource('tripinfo', 'TripInfoController');
 Route::resource('tracking-movement', 'TrackingMovementController');
-
+Route::resource('employee', 'EmployeeController');
 Route::resource('trip', 'TripController');
 Route::resource('triptype', 'TripTypeController');
 
 
+
 Route::resource('cpanel', 'CpanelController');
+
+Route::get('dashoard', function(){
+     return view('admin.dashboard.index');
 
 
 // Route::get('cpanel', function(){
@@ -33,15 +37,41 @@ Route::resource('cpanel', 'CpanelController');
 
 // })->name('cpanel');
 
-Route::get('register-employee', function(){
-    return view('admin.dashboard.employee.create');
+// Route::get('arrival', function(){
+//     return view('admin.dashboard.arrival.create');
 
-})->name('register-employee');
+// })->name('arrival');
 
-Route::get('employee', function(){
-    return view('admin.dashboard.employee.index');
+// Route::get('departure', function(){
+//     return view('admin.dashboard.departure.create');
+// })->name('departure');
 
-})->name('employee-index');
+
+// Route::get('visit', function(){
+
+//     return view('admin.dashboard.visit.create');
+
+// })->name('visit');
+
+
+// Route::get('between-cities', function(){
+//     return view('admin.dashboard.between-cities.creat');
+
+// })->name('between-cities');
+
+
+// Route::get('chase-movement', function(){
+//     return view('admin.dashboard.chase-movement.index');
+
+// })->name('chase-movement');
+
+
+//Route::get('register', function(){
+//    return view('admin.dashboard.employee.create');
+
+//})->name('register');
+
+//Route::get('employee', 'EmployeeController@index')->name('employee-index');
 
 
 

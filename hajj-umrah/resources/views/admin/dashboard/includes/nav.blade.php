@@ -26,9 +26,9 @@
         <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown"><i class="icon-plus"></i><span data-i18n="nav.layouts.temp"> الموظفين</span></a>
           <ul class="dropdown-menu">
  
-            <li data-menu=""><a class="dropdown-item" href="{{route('employee-index')}}" data-toggle="dropdown">عرض</a>
+            <li data-menu=""><a class="dropdown-item" href="{{route('employee.index')}}" data-toggle="dropdown">عرض</a>
             </li>
-            <li data-menu=""><a class="dropdown-item" href="{{route('register-employee')}}" data-toggle="dropdown">تسجيل</a>
+            <li data-menu=""><a class="dropdown-item" href="{{route('register')}}" data-toggle="dropdown">تسجيل</a>
             </li>
 
         
