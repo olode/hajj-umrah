@@ -5,8 +5,8 @@
           <li class="nav-item mobile-menu d-md-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu font-large-1"></i></a></li>
           <li class="nav-item">
             <a class="navbar-brand" href="index.html">
-              <img class="brand-logo" alt="robust admin logo" src="{{asset('dashboard/app-assets/images/logo/logo-light-sm.png')}}">
-              <h3 class="brand-text">Robust Admin</h3>
+             {{-- <img class="brand-logo" alt="robust admin logo" src="{{asset('dashboard/app-assets/images/logo/logopic.jpeg')}}">--}}
+              <h3 class="brand-text">شركة أبناء مساعد بن حمود المطرفي</h3>
             </a>
           </li>
           <li class="nav-item d-md-none">
@@ -31,8 +31,9 @@
 
 
           <ul class="nav navbar-nav float-right">
-           
-            <li class="dropdown dropdown-notification nav-item">
+            
+          <!-- comment -->
+          {{--  <li class="dropdown dropdown-notification nav-item">
               <a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="ficon ft-bell"></i>
                 <span class="badge badge-pill badge-default badge-danger badge-default badge-up">1</span>
               </a>
@@ -117,7 +118,7 @@
                 </li>
                 <li class="dropdown-menu-footer"><a class="dropdown-item text-muted text-center" href="javascript:void(0)">متابعة التحركات</a></li>
               </ul>
-            </li>
+            </li> --}}
 
            
             <li class="dropdown dropdown-user nav-item">

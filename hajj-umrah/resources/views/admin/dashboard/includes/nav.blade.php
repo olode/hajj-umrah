@@ -5,7 +5,8 @@
       <!-- include includes/mixins-->
       <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
         <li class="dropdown nav-item" data-menu="dropdown">
-          <a class="dropdown-toggle nav-link" href="{{route('dash')}}" ><i class="icon-home"></i>
+          <a class=" nav-link" href="{{route('cpanel.index')}}" ><i class="icon-home"></i>
+          
             <span data-i18n="nav.dash.main">الرئيسية</span>
           </a>
       
@@ -15,7 +16,9 @@
           <ul class="dropdown-menu">
             <li data-menu=""><a class="dropdown-item" href="{{route('trip.create')}}" data-toggle="dropdown">تسجيل تحرك جديد</a>
             </li>
-            <li data-menu=""><a class="dropdown-item" href="{{route('tracking-movement.index')}}" data-toggle="dropdown">متابعة التحركات</a>
+            <li data-menu=""><a class="dropdown-item" href="{{route('tracking-movement.index')}}" data-toggle="dropdown">متابعة التحركات اليومية</a>
+            </li>
+            <li data-menu=""><a class="dropdown-item" href="{{route('trip.index')}}" data-toggle="dropdown">الاستعلام عن التحركات</a>
             </li>
 
           </ul>
@@ -47,7 +50,7 @@
         </li> -->
 
 
-        <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown"><i class="icon-screen-desktop"></i><span data-i18n="nav.category.ui">استعلامات</span></a>
+        <!-- <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown"><i class="icon-screen-desktop"></i><span data-i18n="nav.category.ui">استعلامات</span></a>
           <ul class="dropdown-menu">
 
               <li data-menu=""><a class="dropdown-item" href="changelog.html" data-toggle="dropdown">الوصول</a>
@@ -65,7 +68,7 @@
             
        
           </ul>
-        </li>
+        </li> -->
 
 
 

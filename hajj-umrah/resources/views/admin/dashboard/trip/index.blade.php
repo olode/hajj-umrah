@@ -127,8 +127,15 @@
                             </td>
                             
                 
-                          <td>
+                          <td class="text-center">
                               <i class="{{$trip->completed == 1 ? 'ft-check-circle' :'ft-x-circle' }}"></i>
+
+                              @if($trip->completed == 0)
+                                 <a href="{{route('tracking-movement.create')}}?id={{$trip->id}}&trip=public" class="badge badge-warning">اكمال البيانات  الناقصة</a>
+                              @elseif($trip->completed == 1)
+                                    <br>
+                              <span>بيانات مكتملة</span>
+                              @endif
                           <td>
                           <a href="{{route('trip.edit',$trip->id)}}" class="badge badge-warning">تعديل</a>
                           <button class="badge badge-danger">حذف</button>

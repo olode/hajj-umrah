@@ -25,11 +25,13 @@ Route::resource('trip', 'TripController');
 Route::resource('triptype', 'TripTypeController');
 
 
+Route::resource('cpanel', 'CpanelController');
 
-Route::get('dashboard', function(){
-    return view('admin.dashboard.index');
 
-})->name('dash');
+// Route::get('cpanel', function(){
+//     return view('admin.dashboard.index');
+
+// })->name('cpanel');
 
 Route::get('register-employee', function(){
     return view('admin.dashboard.employee.create');
