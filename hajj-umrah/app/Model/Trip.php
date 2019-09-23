@@ -26,4 +26,11 @@ class Trip extends Model
         return $this->belongsTo('App\Model\TripInfo', 'trip_info_id');
     }
 
+    public function repersentative(){
+        return $this->hasOne('App\Model\Representative');
+    }
+
+    public function transport(){
+        return $this->hasOne('App\Model\TransportCompany');
+    }
 }

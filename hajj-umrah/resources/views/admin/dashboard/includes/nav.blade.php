@@ -10,9 +10,12 @@
           </a>
       
         </li>
-        <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown"><i class="icon-note"></i><span data-i18n="nav.templates.main"> التحركات</span></a>
+        <!-- <i class="icon-note"></i> -->
+        <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown"><i class="icon-graph"></i><span data-i18n="nav.templates.main"> التحركات</span></a>
           <ul class="dropdown-menu">
             <li data-menu=""><a class="dropdown-item" href="{{route('trip.create')}}" data-toggle="dropdown">تسجيل تحرك جديد</a>
+            </li>
+            <li data-menu=""><a class="dropdown-item" href="{{route('tracking-movement.index')}}" data-toggle="dropdown">متابعة التحركات</a>
             </li>
 
           </ul>
@@ -32,7 +35,7 @@
         
           </ul>
         </li>
-        <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown"><i class="icon-graph"></i><span data-i18n="nav.category.general">متابعة التحركات</span></a>
+        <!-- <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown"><i class="icon-graph"></i><span data-i18n="nav.category.general">متابعة التحركات</span></a>
           <ul class="dropdown-menu">
           
             
@@ -41,7 +44,7 @@
             
             
           </ul>
-        </li>
+        </li> -->
 
 
         <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown"><i class="icon-screen-desktop"></i><span data-i18n="nav.category.ui">استعلامات</span></a>
