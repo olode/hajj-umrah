@@ -29,7 +29,7 @@ Route::resource('employee', 'EmployeeController');
 
 
 Route::get('dashoard', function(){
-    return view('admin.dashboard.index');
+     return view('admin.dashboard.index');
 
 })->name('dash');
 
