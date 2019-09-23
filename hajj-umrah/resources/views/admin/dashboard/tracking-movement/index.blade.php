@@ -60,7 +60,7 @@
                           @if( $trip->completed == 1)
                           
                           <span> معلومات مكتملة <i class="ft-check-circle"></i></span>
-                          @else
+                          @elseif($trip->completed == 0)
                           <a href="{{route('tracking-movement.create')}}?id={{$trip->id}}"  id="arrival"  class="badge badge-info">النقل والمندوب</a>
 
                           @endif

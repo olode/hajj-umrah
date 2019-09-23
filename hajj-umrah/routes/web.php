@@ -21,15 +21,21 @@ Route::resource('direction', 'DirectionController');
 Route::resource('tripinfo', 'TripInfoController');
 Route::resource('tracking-movement', 'TrackingMovementController');
 Route::resource('employee', 'EmployeeController');
-
 Route::resource('trip', 'TripController');
 Route::resource('triptype', 'TripTypeController');
 
 
+
+Route::resource('cpanel', 'CpanelController');
+
 Route::get('dashoard', function(){
      return view('admin.dashboard.index');
 
-})->name('dash');
+
+// Route::get('cpanel', function(){
+//     return view('admin.dashboard.index');
+
+// })->name('cpanel');
 
 // Route::get('arrival', function(){
 //     return view('admin.dashboard.arrival.create');

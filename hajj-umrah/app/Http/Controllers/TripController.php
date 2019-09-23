@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Model\TransportCompany;
+use App\Model\Representative;
 use App\Model\Direction;
 use App\Model\TripType;
 use App\Model\TripInfo;
@@ -20,6 +22,9 @@ class TripController extends Controller
   public function index()
   {
     
+    $trips = Trip::all();
+
+    return view('admin.dashboard.trip.index', compact('trips'));
   }
 
   /**
@@ -82,6 +87,26 @@ class TripController extends Controller
   public function edit($id)
   {
     
+
+    $completed = Trip::Select('completed')->where('id', $id)->first();
+    if($completed->completed == 1){
+      $trip = Trip::Find($id);
+      $transport = TransportCompany::where('trip_id', $id)->first();
+      $representative = Representative::where('trip_id', $id)->first();
+      $trip_types = TripType::Select('id', 'type')->get();
+      $directions = Direction::Select('id', 'name')->get();
+      return view('admin.dashboard.trip.edit',compact('directions', 'trip_types', 'trip', 'transport', 'representative'));
+
+
+    }elseif($completed->completed == 0){
+
+      $trip = Trip::Find($id);
+      $trip_types = TripType::Select('id', 'type')->get();
+      $directions = Direction::Select('id', 'name')->get();
+     return view('admin.dashboard.trip.edit',compact('directions', 'trip_types', 'trip'));
+      
+    }
+
   }
 
   /**
@@ -90,9 +115,67 @@ class TripController extends Controller
    * @param  int  $id
    * @return Response
    */
-  public function update($id)
+  public function update(Request $request ,$id)
   {
-    
+
+    $completed = Trip::Select('completed')->where('id', $id)->first();
+    if($completed->completed == 1){
+      $trip = Trip::Find($id);
+      $trip->trip_type_id = $request->trip_type_id;
+      $trip->wakeel_name = $request->wakeel_name;
+      $trip->nationality = $request->nationality;
+      $trip->pilgram_count = $request->pilgram_count;
+      $trip->hotel = $request->hotel;
+      $trip->direction_id = $request->direction_id;
+      $trip->day = $request->day;
+      $trip->time = $request->time;
+      $trip->date = $request->date;
+      $trip->advance_standby = $request->advance_standby;
+      $trip->trip_number = $request->trip_number;
+      $trip->save();
+
+      $transport = TransportCompany::where('trip_id', $id)->first();
+      $transport->name = $request->name;
+      $transport->driver_name = $request->driver_name;
+      $transport->driver_id = $request->driver_id;
+      $transport->phone = $request->phone;
+      $transport->car_plate = $request->car_plate;
+      $transport->save();
+
+      $representative = Representative::where('trip_id', $id)->first();
+      $representative->recipient = $request->recipient_name ;
+      $representative->name = $request->representative_name ;
+      $representative->phone = $request->representative_phone ;
+      $representative->terminator = $request->terminator ;
+      $representative->save();
+
+
+
+      $trips = Trip::all();
+      return view('admin.dashboard.trip.index', compact('trips'));
+
+    }elseif($completed->completed == 0){
+
+
+      $trip = Trip::Find($id);
+      $trip->trip_type_id = $request->trip_type_id;
+      $trip->wakeel_name = $request->wakeel_name;
+      $trip->nationality = $request->nationality;
+      $trip->pilgram_count = $request->pilgram_count;
+      $trip->hotel = $request->hotel;
+      $trip->direction_id = $request->direction_id;
+      $trip->day = $request->day;
+      $trip->time = $request->time;
+      $trip->date = $request->date;
+      $trip->advance_standby = $request->advance_standby;
+      $trip->trip_number = $request->trip_number;
+      $trip->save();
+
+      $trips = Trip::all();
+      return view('admin.dashboard.trip.index', compact('trips'));
+
+    }
+
   }
 
   /**
