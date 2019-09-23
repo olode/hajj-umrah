@@ -28,8 +28,8 @@ Route::resource('triptype', 'TripTypeController');
 
 Route::resource('cpanel', 'CpanelController');
 
-Route::get('dashoard', function(){
-     return view('admin.dashboard.index');
+// Route::get('dashoard', function(){
+//      return view('admin.dashboard.index');
 
 
 // Route::get('cpanel', function(){
