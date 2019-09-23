@@ -15,7 +15,7 @@ class CreateTransportCompaniesTable extends Migration {
 			$table->string('driver_name', 50);
 			$table->string('driver_id', 15);
 			$table->string('car_plate', 10);
-			$table->integer('wakeel_id')->unsigned()->nullable();
+			$table->integer('trip_id')->unsigned()->nullable();
 		});
 	}
 

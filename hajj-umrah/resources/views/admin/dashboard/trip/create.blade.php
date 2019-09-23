@@ -18,7 +18,7 @@
 
             <div class="card" style="height: 838px;">
                 <div class="card-header">
-                  <h4 class="card-title" id="basic-layout-round-controls">اضافة تحرك بين المدن </h4>
+                  <h4 class="card-title" id="basic-layout-round-controls">اضافة تحرك جديد</h4>
                   <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
                   <div class="heading-elements">
                     <ul class="list-inline mb-0">
@@ -36,27 +36,49 @@
                     <hr>
                       <p></p>
                     </div>
-                    <form class="form" method="POST" action="{{route('betweencity.store')}}">
-                       @csrf
+                    <form class="form" method="POST" action="{{route('trip.store')}}">
+                        @csrf
                     <div class="form-body">
-                        <div class="form-group">
-                          <label for="issueinput1">اسم الوكيل</label>
-                          <input type="text" id="issueinput1" class="form-control" placeholder="اسم الوكيل" name="wakeel_name" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Issue Title" data-original-title="" title="">
+                        
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="issueinput5">نوع التحرك</label>
+                                <select id="issueinput5" name="trip_type_id" class="form-control" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Priority" data-original-title="" title="">
+                                @foreach($trip_types as $trip_type)
+                                <option value="{{$trip_type->id}}">{{$trip_type->type}}</option>
+                                @endforeach
+                                </select>
+                            </div>
                         </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="issueinput1">اسم الوكيل</label>
+                                <input type="text" id="issueinput1" class="form-control" placeholder="اسم الوكيل" name="wakeel_name" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Issue Title" data-original-title="" title="">
+                            </div>
+                        </div>
+                    </div>
+
+                      
+
+
                         <div class="row">
                           <div class="col-md-6">
-                            <div class="form-group">
-                              <label for="issueinput2">جنسية الحجاج</label>
-                              <input type="text" id="issueinput2" class="form-control" placeholder="جنسية الحجاج" name="nationality" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="">
-                            </div>
+                          <div class="form-group">
+                          <label for="issueinput1">جنسية الحجاج</label>
+                          <input type="text" id="issueinput1" class="form-control" placeholder="جنسية الحجاج" name="nationality" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Issue Title" data-original-title="" title="">
+                        </div>
+
                           </div>
                           <div class="col-md-6">
-                            <div class="form-group">
-                              <label for="issueinput2">عدد الحجاج</label>
-                              <input type="text" id="issueinput2" class="form-control" placeholder="عدد الحجاج" name="pilgram_count" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="">
-                            </div>
+                          <div class="form-group">
+                          <label for="issueinput2">عدد الحجاج</label>
+                          <input type="text" id="issueinput2" class="form-control" placeholder="عدد الحجاج" name="pilgram_count" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="">
+                        </div>
                           </div>
                         </div>
+                        
+                       
                         <div class="form-group">
                           <label for="issueinput2">الفندق</label>
                           <input type="text" id="issueinput2" class="form-control" placeholder="الفندق" name="hotel" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="">
@@ -65,11 +87,11 @@
                           <div class="col-md-6">
                           <div class="form-group">
                           <label for="issueinput5">الإتجاه</label>
-                          <select id="issueinput5" name="direction_id" class="form-control" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Priority" data-original-title="" title="">
+                            <select id="issueinput5" name="direction_id" class="form-control" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Priority" data-original-title="" title="">
                               @foreach($directions as $direction)
                               <option value="{{$direction->id}}">{{$direction->name}}</option>
                               @endforeach
-                          </select>
+                            </select>
                         </div>
 
                           </div>
@@ -77,7 +99,7 @@
                           <div class="form-group">
                           <label for="issueinput5">اليوم</label>
                           <select id="issueinput5" name="day" class="form-control" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Priority" data-original-title="" title="">
-                          <option value="السبت">السبت</option>
+                            <option value="السبت">السبت</option>
                             <option value="الأحد">الأحد</option>
                             <option value="الاثنين">الاثنين</option>
                             <option value="الثلاثاء">الثلاثاء</option>
@@ -89,18 +111,17 @@
 
                           </div>
                         </div>
-                        
                         <div class="row">
                           <div class="col-md-6">
                           <div class="form-group">
-                          <label for="issueinput2">وقت التحرك</label>
-                          <input type="text" id="issueinput2" class="form-control" placeholder="وقت التحرك" name="move_time" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="">
+                          <label for="issueinput2">الوقت</label>
+                          <input type="text" id="issueinput2" class="form-control" placeholder="وقت الوصول" name="time" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="">
                         </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                              <label for="issueinput4">تاريخ التحرك</label>
-                              <input type="date" id="issueinput4" class="form-control" name="move_date" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Date Fixed" data-original-title="" title="">
+                              <label for="issueinput4">التاريخ </label>
+                              <input type="date" id="issueinput4" class="form-control" name="date" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Date Fixed" data-original-title="" title="">
                             </div>
                           </div>
                         </div>
@@ -110,7 +131,7 @@
                         </div>
                         <div class="form-group">
                           <label for="issueinput2">رقم الرحلة</label>
-                          <input type="text" id="issueinput2" class="form-control" placeholder="الفندق" name="journey_number" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="">
+                          <input type="text" id="issueinput2" class="form-control" placeholder="رقم الرحلة" name="trip_number" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="">
                         </div>
                         
                       </div>

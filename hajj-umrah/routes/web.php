@@ -15,17 +15,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('arrival', 'ArrivalController');
 Route::resource('transportcompany', 'TransportCompanyController');
 Route::resource('representative', 'RepresentativeController');
 Route::resource('direction', 'DirectionController');
-Route::resource('departure', 'DepartureController');
-Route::resource('mazarat', 'MazaratController');
-Route::resource('betweencity', 'BetweenCityController');
 Route::resource('tripinfo', 'TripInfoController');
 Route::resource('tracking-movement', 'TrackingMovementController');
 Route::resource('employee', 'EmployeeController');
 
+Route::resource('trip', 'TripController');
+Route::resource('triptype', 'TripTypeController');
 
 
 Route::get('dashoard', function(){

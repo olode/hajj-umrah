@@ -11,7 +11,6 @@ class CreateTripInfoTable extends Migration {
 			$table->increments('id');
 			$table->timestamps();
 			$table->string('info', 100)->nullable();
-			$table->string('type', 50)->nullable();
 		});
 	}
 
