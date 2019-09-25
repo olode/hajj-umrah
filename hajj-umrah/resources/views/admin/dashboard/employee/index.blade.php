@@ -57,7 +57,7 @@
                             <td>{{$employee->username}}</td>
                             <td>{{$employee->rule_id}}</td>
                             <td>
-                            <form action="{{ route('') }}" method="post"><button type="submit" class="badge badge-warning">تعديل</button></form>
+                            <form action="#" method="post"><button type="submit" class="badge badge-warning">تعديل</button></form>
                             <button class="badge badge-danger">حذف</button>
                             </td>
                           </tr>
