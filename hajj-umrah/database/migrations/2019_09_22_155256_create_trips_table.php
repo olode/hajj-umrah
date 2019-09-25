@@ -22,6 +22,7 @@ class CreateTripsTable extends Migration {
 			$table->string('advance_standby', 50)->nullable();
 			$table->string('day', 30)->nullable();
 			$table->integer('trip_type_id')->unsigned()->nullable();
+			$table->boolean('completed')->default(0); 
 		});
 	}
 
