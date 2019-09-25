@@ -2,12 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Input;
 
 class EmployeeController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -63,6 +70,12 @@ class EmployeeController extends Controller
         return view('admin.dashboard.employee.edit',compact('user'));
     }
 
+    public function password($id)
+    {
+        $user = User::findOrfail($id);
+        return view('admin.dashboard.employee.password',compact('user'));
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -74,13 +87,18 @@ class EmployeeController extends Controller
     {
         //dd($request->all());
         $user = User::findOrfail($id);
+        $user->update($request->all());
+        return redirect('employee');
+    }
+
+    public function updatepassword(Request $request, $id)
+    {
+        $password =$request->password;
+        $hashedpassword= Hash::make($password);
+        //dd($hashedpassword);
+        $user = User::findOrfail($id);
         $user->update([
-            'name' => Input::get('name'),
-            'email' => Input::get('email'),
-            'username' => Input::get('username'),
-            'phone_number' => Input::get('phone_number'),
-            'rule_id' => Input::get('rule_id'),
-            'password' => Hash::make(Input::get('password')),
+            'password'=> $hashedpassword,
         ]);
         return redirect('employee');
     }
@@ -93,6 +111,7 @@ class EmployeeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::destroy($id);
+        return redirect()->back();
     }
 }

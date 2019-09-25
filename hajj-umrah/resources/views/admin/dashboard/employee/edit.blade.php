@@ -16,7 +16,7 @@
             <div class="col-6">
 
 
-            <div class="card" style="height: 838px;">
+            <div class="card" style="height: 741px;">
                 <div class="card-header">
                   <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
                   <div class="heading-elements">
@@ -51,7 +51,7 @@
                                     <div class="form-body">
                                         <div class="form-group">
                                         <label for="name">الاسم</label>
-                                        <input type="text" value="{{ $user->name }}" id="name" class="form-control @error('name') is-invalid @enderror" placeholder="اسم الموظف" name="name" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Issue Title" data-original-title="" title="">
+                                        <input type="text" maxlength="20" minlength="10" required value="{{ $user->name }}" id="name" class="form-control @error('name') is-invalid @enderror" placeholder="اسم الموظف" name="name" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Issue Title" data-original-title="" title="" required>
                                             @error('name')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -60,7 +60,7 @@
                                         </div>
                                         <div class="form-group">
                                         <label for="email">البريد الالكتروني</label>
-                                        <input type="text" value="{{ $user->email }}" id="email" class="form-control @error('email') is-invalid @enderror" placeholder="البريدالالكتروني" name="email" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="">
+                                        <input type="text" value="{{ $user->email }}" id="email" class="form-control @error('email') is-invalid @enderror" placeholder="البريدالالكتروني" name="email" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="" required>
                                             @error('email')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -69,7 +69,7 @@
                                         </div>
                                         <div class="form-group">
                                         <label for="username">اسم المستخدم</label>
-                                        <input type="text" value="{{ $user->username }}" id="username" class="form-control @error('username') is-invalid @enderror" placeholder="اسم المستخدم" name="username" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="">
+                                        <input type="text" minlength="5" maxlength="10" required value="{{ $user->username }}" id="username" class="form-control @error('username') is-invalid @enderror" placeholder="اسم المستخدم" name="username" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="" required>
                                             @error('username')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -78,30 +78,22 @@
                                         </div>
                                         <div class="form-group">
                                         <label for="phone_number">الهاتف</label>
-                                        <input type="text" value="{{ $user->phone_number }}" id="phone_number" class="form-control @error('phone_number') is-invalid @enderror" placeholder="هاتف الموظف" name="phone_number" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="">
+                                        <input type="text" maxlength="15" required minlength="10" value="{{ $user->phone_number }}" id="phone_number" class="form-control @error('phone_number') is-invalid @enderror" placeholder="هاتف الموظف" name="phone_number" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="" required>
                                             @error('phone_number')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
                                             @enderror
                                         </div>
-            
-                                        <div class="form-group">
-                                        <label for="password">كلمة المرور</label>
-                                        <input type="text" value="{{ $user->phone_number }}" id="password" class="form-control" placeholder="كلمة المرور" name="password" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="">
-                                        </div>
-            
-            
-                                    
                                         <div class="form-group">
                                         <label for="rule_id">نوع الموظف</label>
-                                        <select id="rule_id" name="rule_id" class="form-control" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Priority" data-original-title="" title="">
+                                        <select id="rule_id" name="rule_id" class="form-control" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Priority" data-original-title="" title="" required>
                                             <option value="{{ $user->rule_id }}">اختر نوع الموظف</option>
                                             <option value="1">مشرف العام</option>
                                             <option value="2">مشرف</option>
                                         </select>
                                         </div>
-            
+                                        <a href="{{route('employee.password',$user->id)}}">اذا كنت ترغب بتغيير كلمة المرور اضغط هنا</a>
                                         
                                     </div>
                                     <div class="form-actions">

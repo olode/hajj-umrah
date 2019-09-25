@@ -23,6 +23,7 @@
                 <div class="card-header">
                   <h4 class="card-title">عرض الموظفين</h4>
                   <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
+                  <hr>
                   <div class="heading-elements">
                     <ul class="list-inline mb-0">
                       <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
@@ -37,44 +38,48 @@
                 <div class="card-content collapse show">
                   <div class="card-body card-dashboard">
                     <!-- <p class="card-text"> متابعة تحركات لتاريخ ٢٠١٩/٠٨/٠٥</p> -->
-                    <table class="table table-striped table-bordered dom-jQuery-events">
-                      <thead>
-                        <tr>
-                          <th>الاسم</th>
-                          <th>الهاتف</th>
-                          <th>البريد الالكتروني</th>
-                          <th>اسم المستخدم</th>
-                          <th>نوع المستخدم</th>
-                          <th>اعدادات</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        @foreach ($employies as $employee)  
+                    @if (count($employies)>0)
+                      <table class="table table-striped table-bordered dom-jQuery-events">
+                        <thead>
                           <tr>
-                            <td>{{$employee->name}}</td>
-                            <td>{{$employee->phone_number}}</td>
-                            <td>{{$employee->email}}</td>
-                            <td>{{$employee->username}}</td>
-                            <td>{{$employee->rule_id}}</td>
-                            <td>
-                            <form action="{{ route('') }}" method="post"><button type="submit" class="badge badge-warning">تعديل</button></form>
-                            <button class="badge badge-danger">حذف</button>
-                            </td>
+                            <th>الاسم</th>
+                            <th>الهاتف</th>
+                            <th>البريد الالكتروني</th>
+                            <th>اسم المستخدم</th>
+                            <th>نوع المستخدم</th>
+                            <th>اعدادات</th>
                           </tr>
-                        @endforeach
-                      </tbody>
-                      <tfoot>
-                        <tr>
-                        <th>الاسم</th>
-                          <th>الهاتف</th>
-                          <th>البريد الالكتروني</th>
-                          <th>اسم المستخدم</th>
-                          <th>نوع المستخدم</th>
-                          <th>اعدادات</th>
-                            
-                        </tr>
-                      </tfoot>
-                    </table>
+                        </thead>
+                        <tbody>
+                          @foreach ($employies as $employee)  
+                            <tr>
+                              <td>{{$employee->name}}</td>
+                              <td>{{$employee->phone_number}}</td>
+                              <td>{{$employee->email}}</td>
+                              <td>{{$employee->username}}</td>
+                              <td>{{$employee->rule_id}}</td>
+                              <td>
+                              <form style=" display:inline " action="{{ route('employee.edit', $employee->id) }}" method="get"><button type="submit" class="badge badge-warning">تعديل</button></form>
+                              <form style=" display:inline " action="{{ route('employee.destroy', $employee->id) }}" method="post"> @csrf @method('DELETE') <button type="submit" class="badge badge-danger">حذف</button></form>
+                              </td>
+                            </tr>
+                          @endforeach
+                        </tbody>
+                        <tfoot>
+                          <tr>
+                          <th>الاسم</th>
+                            <th>الهاتف</th>
+                            <th>البريد الالكتروني</th>
+                            <th>اسم المستخدم</th>
+                            <th>نوع المستخدم</th>
+                            <th>اعدادات</th>
+                              
+                          </tr>
+                        </tfoot>
+                      </table>
+                    @else
+                        <h2>لم يتم إضافة موظفين</h2>
+                    @endif
                   </div>
                 </div>
                 

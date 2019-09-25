@@ -44,33 +44,33 @@
                     <input name="id" type="text" value="{{$_GET['id']}}" hidden>
                         <div class="form-group">
                           <label for="issueinput1">اسم الشركة </label>
-                          <input type="text" id="issueinput1" class="form-control" placeholder="اسم الشركة" name="name" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Issue Title" data-original-title="" title="">
+                          <input type="text" id="issueinput1" class="form-control" placeholder="اسم الشركة" name="name" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Issue Title" data-original-title="" title="" required>
                         </div>
                         <div class="row">
                           <div class="col-md-6">
                           <div class="form-group">
                           <label for="issueinput1"> اسم السائق</label>
-                          <input type="text" id="issueinput1" class="form-control" placeholder="اسم السائق" name="driver_name" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Issue Title" data-original-title="" title="">
+                          <input type="text" id="issueinput1" class="form-control" placeholder="اسم السائق" name="driver_name" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Issue Title" data-original-title="" title="" required>
                         </div>
 
                           </div>
                           <div class="col-md-6">
                           <div class="form-group">
                           <label for="issueinput2">رقم هوية السائق</label>
-                          <input type="text" id="issueinput2" class="form-control" placeholder="رقم هوية السائق" name="driver_id" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="">
+                          <input type="text" id="issueinput2" class="form-control" placeholder="رقم هوية السائق" name="driver_id" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="" required>
                         </div>
                           </div>
                         </div>
 
                         <div class="form-group">
                           <label for="issueinput2">رقم  جوال السائق</label>
-                          <input type="text" id="issueinput2" class="form-control" placeholder="رقم  جوال السائق" name="phone" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="">
+                          <input type="text" id="issueinput2" class="form-control" placeholder="رقم  جوال السائق" name="phone" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="" required>
                         </div>
                         
 
                         <div class="form-group">
                           <label for="issueinput2">رقم لوحة السيارة</label>
-                          <input type="text" id="issueinput2" class="form-control" placeholder="رقم لوحة السيارة" name="car_plate" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="">
+                          <input type="text" id="issueinput2" class="form-control" placeholder="رقم لوحة السيارة" name="car_plate" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="" required>
                         </div>
 
                         <div class="card-text">
@@ -82,20 +82,20 @@
                 
                         <div class="form-group">
                           <label for="issueinput1">اسم مستلم الحالة </label>
-                          <input type="text" id="issueinput1" class="form-control" placeholder="اسم مستلم الحالة" name="recipient_name" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Issue Title" data-original-title="" title="">
+                          <input type="text" id="issueinput1" class="form-control" placeholder="اسم مستلم الحالة" name="recipient_name" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Issue Title" data-original-title="" title="" required>
                         </div>
                         <div class="row">
                           <div class="col-md-6">
                           <div class="form-group">
                           <label for="issueinput1"> اسم المندوب</label>
-                          <input type="text" id="issueinput1" class="form-control" placeholder="اسم المندوب" name="representative_name" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Issue Title" data-original-title="" title="">
+                          <input type="text" id="issueinput1" class="form-control" placeholder="اسم المندوب" name="representative_name" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Issue Title" data-original-title="" title="" required>
                         </div>
 
                           </div>
                           <div class="col-md-6">
                           <div class="form-group">
                           <label for="issueinput2">رقم المندوب</label>
-                          <input type="text" id="issueinput2" class="form-control" placeholder="رقم المندوب" name="representative_phone" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="">
+                          <input type="text" id="issueinput2" class="form-control" placeholder="رقم المندوب" name="representative_phone" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="" required>
                         </div>
                           </div>
                         </div>
@@ -103,7 +103,7 @@
 
                         <div class="form-group">
                           <label for="issueinput2">منهي الحالة</label>
-                          <input type="text" id="issueinput2" class="form-control" placeholder="منهي الحالة" name="terminator" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="">
+                          <input type="text" id="issueinput2" class="form-control" placeholder="منهي الحالة" name="terminator" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="" required>
                         </div>
                         
                       </div>

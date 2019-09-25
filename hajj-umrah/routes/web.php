@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
 Route::resource('transportcompany', 'TransportCompanyController');
 Route::resource('representative', 'RepresentativeController');
@@ -21,15 +21,17 @@ Route::resource('direction', 'DirectionController');
 Route::resource('tripinfo', 'TripInfoController');
 Route::resource('tracking-movement', 'TrackingMovementController');
 Route::resource('employee', 'EmployeeController');
-
 Route::resource('trip', 'TripController');
 Route::resource('triptype', 'TripTypeController');
+Route::get('employee/{id}/password', 'EmployeeController@password')->name('employee.password');
+Route::PUT('employee/{id}/password', 'EmployeeController@updatepassword')->name('employee.updatepassword');
 
 
-Route::get('dashoard', function(){
-     return view('admin.dashboard.index');
 
-})->name('dash');
+//Route::get('dashoard', function(){
+//     return view('admin.dashboard.index');
+
+//})->name('dash');
 
 // Route::get('arrival', function(){
 //     return view('admin.dashboard.arrival.create');
@@ -72,4 +74,4 @@ Route::get('dashoard', function(){
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('dash');

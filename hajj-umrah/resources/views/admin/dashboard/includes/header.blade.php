@@ -121,15 +121,19 @@
 
            
             <li class="dropdown dropdown-user nav-item">
-              <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
+              <a class="dropdown-toggle nav-link dropdown-user-link" href="{{ route('logout') }}" data-toggle="dropdown">
                 <span class="avatar avatar-online">
                   <img src="{{asset('dashboard/app-assets/images/portrait/small/avatar-s-1.png')}}"
                   alt="avatar"><i></i></span>
-                <span class="user-name">أحمد</span>
+                <span class="user-name">{{ Auth::user()->username }}</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right">
   
-                  <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="ft-power"></i>خروج</a>
+                  <div class="dropdown-divider"></div>
+                  <form class="dropdown-item" action="{{ route('logout') }}" method="post" style=" width:100%;">
+                    @csrf
+                    <button type="submit" style="border: none; background: none;"><i class="ft-power"></i>خروج</button>
+                  </form>
               </div>
             </li>
           </ul>

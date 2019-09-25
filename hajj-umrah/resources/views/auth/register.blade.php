@@ -41,7 +41,7 @@
                         <div class="form-body">
                             <div class="form-group">
                             <label for="name">الاسم</label>
-                            <input type="text" id="name" class="form-control @error('name') is-invalid @enderror" placeholder="اسم الموظف" name="name" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Issue Title" data-original-title="" title="">
+                            <input type="text" id="name" maxlength="20" minlength="10" class="form-control @error('name') is-invalid @enderror" placeholder="اسم الموظف" name="name" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Issue Title" data-original-title="" title="" required>
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -50,7 +50,7 @@
                             </div>
                             <div class="form-group">
                             <label for="email">البريد الالكتروني</label>
-                            <input type="text" id="email" class="form-control @error('email') is-invalid @enderror" placeholder="البريدالالكتروني" name="email" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="">
+                            <input type="text" id="email" class="form-control @error('email') is-invalid @enderror" placeholder="البريدالالكتروني" name="email" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="" required>
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -59,7 +59,7 @@
                             </div>
                             <div class="form-group">
                             <label for="username">اسم المستخدم</label>
-                            <input type="text" id="username" class="form-control @error('username') is-invalid @enderror" placeholder="اسم المستخدم" name="username" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="">
+                            <input type="text" id="username" minlength="5" maxlength="10" class="form-control @error('username') is-invalid @enderror" placeholder="اسم المستخدم" name="username" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="" required>
                                 @error('username')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -68,7 +68,7 @@
                             </div>
                             <div class="form-group">
                             <label for="phone_number">الهاتف</label>
-                            <input type="text" id="phone_number" class="form-control @error('phone_number') is-invalid @enderror" placeholder="هاتف الموظف" name="phone_number" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="">
+                            <input type="text" id="phone_number" maxlength="15" required minlength="10" class="form-control @error('phone_number') is-invalid @enderror" placeholder="هاتف الموظف" name="phone_number" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="">
                                 @error('phone_number')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -78,7 +78,7 @@
 
                             <div class="form-group">
                             <label for="password">كلمة المرور</label>
-                            <input type="text" id="password" class="form-control @error('password') is-invalid @enderror" placeholder="كلمة المرور" name="password" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="">
+                            <input type="text" id="password" minlength="8" maxlength="15" required class="form-control @error('password') is-invalid @enderror" placeholder="كلمة المرور" name="password" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="">
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -90,10 +90,10 @@
                         
                             <div class="form-group">
                             <label for="rule_id">نوع الموظف</label>
-                            <select id="rule_id" name="rule_id" class="form-control @error('rule_id') is-invalid @enderror" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Priority" data-original-title="" title="">
+                            <select id="rule_id" name="rule_id" required class="form-control @error('rule_id') is-invalid @enderror" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Priority" data-original-title="" title="">
                                 <option value="">اختر نوع الموظف</option>
-                                <option value="1">مشرف العام</option>
-                                <option value="2">مشرف</option>
+                                <option value="مشرف العام">مشرف العام</option>
+                                <option value="مشرف">مشرف</option>
                             </select>
                             @error('rule_id')
                                 <span class="invalid-feedback" role="alert">

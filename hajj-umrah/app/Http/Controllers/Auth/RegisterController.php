@@ -39,6 +39,10 @@ class RegisterController extends Controller
    // {
    //     $this->middleware('guest');
    // }
+   public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     /**
      * Get a validator for an incoming registration request.
@@ -53,7 +57,7 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255'],
             'username' => ['required', 'string', 'min:5'],
             'phone_number' => ['required', 'max:255'],
-            'rule_id' => ['required', 'integer', 'max:255'],
+            'rule_id' => ['required', 'string', 'max:255'],
             'password' => ['required', 'string', 'min:8'],
         ]);
     }
