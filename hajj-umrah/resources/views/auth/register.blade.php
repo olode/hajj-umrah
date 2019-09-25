@@ -90,7 +90,7 @@
                         
                             <div class="form-group">
                             <label for="rule_id">نوع الموظف</label>
-                            <select id="rule_id" name="rule_id" class="form-control @error('rule_id') is-invalid @enderror" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Priority" data-original-title="" title="">
+                            <select id="rule_id" name="role_id" class="form-control @error('role_id') is-invalid @enderror" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Priority" data-original-title="" title="">
                                 <option value="">اختر نوع الموظف</option>
                                 <option value="1">مشرف العام</option>
                                 <option value="2">مشرف</option>
