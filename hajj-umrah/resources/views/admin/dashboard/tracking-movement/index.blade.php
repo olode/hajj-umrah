@@ -46,68 +46,29 @@
                         </tr>
                       </thead>
                       <tbody>
-                        @foreach($arrivals as $arrival)
+                        @foreach($trips as $trip)
                         
 
                         <tr>
-                          <td>{{$arrival->day}}</td>
-                          <td>{{$arrival->arrival_time}}</td>
-                          <td>{{$arrival->trip->type}}</td>
-                          <td>{{$arrival->direction->name}}</td>
-                          <td>{{$arrival->wakeel_name}}</td>
+                          <td>{{$trip->day}}</td>
+                          <td>{{$trip->time}}</td>
+                          <td>{{$trip->trip_type->type}}</td>
+                          <td>{{$trip->direction->name}}</td>
+                          <td>{{$trip->wakeel_name}}</td>
                           <td>
-                            
-                              @include('admin.dashboard.tracking-movement.form-model')
 
-                          <button  id="arrival" data-arrivid="{{$arrival->id}}" class="badge badge-info" data-toggle="modal" data-target="#myModal">النقل والمندوب</button>
+                          @if( $trip->completed == 1)
+                          
+                          <span> معلومات مكتملة <i class="ft-check-circle"></i></span>
+                          @elseif($trip->completed == 0)
+                          <a href="{{route('tracking-movement.create')}}?id={{$trip->id}}"  id="arrival"  class="badge badge-info">النقل والمندوب</a>
 
+                          @endif
                           <!-- <button class="badge badge-danger">حذف</button> -->
                           </td>
                         </tr>
                         @endforeach
-                        @foreach($departures as $departure)
 
-                        <tr>
-                          <td>{{$departure->day}}</td>
-                          <td>{{$departure->arrival_time}}</td>
-                          <td>{{$departure->trip->type}}</td>
-                          <td>{{$departure->direction->name}}</td>
-                          <td>{{$departure->wakeel_name}}</td>
-                          <td>
-                          <button class="badge badge-info" data-toggle="modal" data-target="#myModal">النقل والمندوب</button>
-
-                          <!-- <button class="badge badge-danger">حذف</button> -->
-                          </td>
-                        </tr>
-                        @endforeach
-                        @foreach($mazarat as $mazar)
-
-                        <tr>
-                          <td>{{$mazar->day}}</td>
-                          <td>{{$mazar->mazar_time}}</td>
-                          <td>{{$mazar->trip->type}}</td>
-                          <td>{{$mazar->direction->name}}</td>
-                          <td>{{$mazar->wakeel_name}}</td>
-                          <td>
-                          <button  class="badge badge-info" data-toggle="modal" data-target="#myModal">النقل والمندوب</button>
-                          <!-- <button class="badge badge-danger">حذف</button> -->
-                          </td>
-                        </tr>
-                        @endforeach
-                        @foreach($between_cities as $between_city)
-
-                        <tr>
-                          <td>{{$between_city->day}}</td>
-                          <td>{{$between_city->move_time}}</td>
-                          <td>{{$between_city->trip->type}}</td>
-                          <td>{{$between_city->direction->name}}</td>
-                          <td>{{$between_city->wakeel_name}}</td>
-                          <td>
-                          <button class="badge badge-info" data-toggle="modal" data-target="#myModal">النقل والمندوب</button>
-                          <!-- <button class="badge badge-danger">حذف</button> -->
-                          </td>
-                        </tr>
-                        @endforeach
                         </tbody>
                       <tfoot>
                       <tr>

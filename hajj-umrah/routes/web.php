@@ -11,27 +11,34 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
-Route::resource('arrival', 'ArrivalController');
 Route::resource('transportcompany', 'TransportCompanyController');
 Route::resource('representative', 'RepresentativeController');
 Route::resource('direction', 'DirectionController');
-Route::resource('departure', 'DepartureController');
-Route::resource('mazarat', 'MazaratController');
-Route::resource('betweencity', 'BetweenCityController');
 Route::resource('tripinfo', 'TripInfoController');
 Route::resource('tracking-movement', 'TrackingMovementController');
+Route::resource('employee', 'EmployeeController');
+Route::resource('trip', 'TripController');
+Route::resource('triptype', 'TripTypeController');
+Route::get('employee/{id}/password', 'EmployeeController@password')->name('employee.password');
+Route::PUT('employee/{id}/password', 'EmployeeController@updatepassword')->name('employee.updatepassword');
 
 
 
 
-Route::get('dashboard', function(){
-    return view('admin.dashboard.index');
+Route::resource('cpanel', 'CpanelController');
 
-})->name('dash');
+// Route::get('dashoard', function(){
+//      return view('admin.dashboard.index');
+
+
+// Route::get('cpanel', function(){
+//     return view('admin.dashboard.index');
+
+// })->name('cpanel');
 
 // Route::get('arrival', function(){
 //     return view('admin.dashboard.arrival.create');
@@ -62,19 +69,16 @@ Route::get('dashboard', function(){
 // })->name('chase-movement');
 
 
-Route::get('register-employee', function(){
-    return view('admin.dashboard.employee.create');
+//Route::get('register', function(){
+//    return view('admin.dashboard.employee.create');
 
-})->name('register-employee');
+//})->name('register');
 
-Route::get('employee', function(){
-    return view('admin.dashboard.employee.index');
-
-})->name('employee-index');
+//Route::get('employee', 'EmployeeController@index')->name('employee-index');
 
 
 
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('dash');

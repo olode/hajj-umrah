@@ -3,16 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Model\TransportCompany;
+use App\Model\Representative;
 use App\Model\Direction;
 use App\Model\TripInfo;
-use App\Model\Arrival;
-use App\Model\Departure;
-use App\Model\Mazarat;
-use App\Model\BetweenCity;
-use DB;
+use App\Model\Trip;
+
 
 class TrackingMovementController extends Controller 
 {
+
+  public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
   /**
    * Display a listing of the resource.
@@ -22,16 +26,12 @@ class TrackingMovementController extends Controller
   public function index()
   {
 
-   $arrivals = Arrival::Select('id', 'trip_info_id', 'wakeel_name', 'pilgram_count', 'nationality', 'hotel', 'direction_id', 'arrival_time', 'arrival_date', 'journey_number', 'advance_standby', 'day')
-                        ->where('arrival_date', date('Y-m-d'))->get();
-   $departures = Departure::Select('trip_info_id', 'wakeel_name', 'pilgram_count', 'nationality', 'hotel', 'direction_id', 'departure_time', 'departure_date', 'journey_number', 'advance_standby', 'day')
-                        ->where('departure_date', date('Y-m-d'))->get();
-   $mazarat = Mazarat::Select('trip_info_id', 'wakeel_name', 'pilgram_count', 'nationality', 'hotel', 'direction_id', 'mazar_time', 'mazar_date', 'journey_number', 'advance_standby', 'day')
-                        ->where('mazar_date', date('Y-m-d'))->get();
-   $between_cities = BetweenCity::Select('trip_info_id', 'wakeel_name', 'pilgram_count', 'nationality', 'hotel', 'direction_id', 'move_time', 'move_date', 'journey_number', 'advance_standby', 'day')
-                        ->where('move_date', date('Y-m-d'))->get();
+
+
+   $trips = Trip::Select('id', 'trip_info_id', 'trip_type_id', 'wakeel_name', 'pilgram_count', 'nationality', 'hotel', 'direction_id', 'time', 'date', 'trip_number', 'advance_standby', 'day', 'completed')
+                        ->where('date', date('Y-m-d'))->get();
     
-    return view('admin.dashboard.tracking-movement.index',compact('arrivals', 'departures', 'mazarat', 'between_cities'));
+    return view('admin.dashboard.tracking-movement.index',compact('trips'));
   }
 
   /**
@@ -39,9 +39,10 @@ class TrackingMovementController extends Controller
    *
    * @return Response
    */
-  public function create()
+  public function create(Request $request)
   {
-
+    
+    return view('admin.dashboard.tracking-movement.create');
 
   }
 
@@ -52,6 +53,40 @@ class TrackingMovementController extends Controller
    */
   public function store(Request $request)
   {
+   
+
+    TransportCompany::create(['name'=>$request->name, 
+                              'trip_id'=>$request->id, 
+                              'driver_name'=>$request->driver_name, 
+                              'driver_id'=>$request->driver_id, 
+                              'phone'=>$request->phone, 
+                              'car_plate'=>$request->car_plate ]);
+
+       Representative::create(['trip_id'=>$request->id, 
+                              'name'=>$request->representative_name, 
+                              'phone'=>$request->representative_phone, 
+                              'recipient'=>$request->recipient_name, 
+                              'terminator'=>$request->terminator  ]);
+                              
+        $trip = Trip::Find($request->id);
+        $trip->completed = 1;
+        $trip->save();
+
+
+    if($request->trip_get != null){
+      
+      $trips = Trip::all();
+
+      return view('admin.dashboard.trip.index', compact('trips'));
+    }else{
+
+
+      $trips = Trip::Select('id', 'trip_info_id', 'trip_type_id', 'wakeel_name', 'pilgram_count', 'nationality', 'hotel', 'direction_id', 'time', 'date', 'trip_number', 'advance_standby', 'day', 'completed')
+      ->where('date', date('Y-m-d'))->get();
+      return view('admin.dashboard.tracking-movement.index',compact('trips'));
+
+    }
+
 
     
   }

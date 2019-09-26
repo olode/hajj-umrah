@@ -1,103 +1,78 @@
-@extends('admin.layouts.master')
-
+/*@extends('layouts.app')
 
 @section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Register') }}</div>
 
+                <div class="card-body">
+                    <form method="POST" action="{{ route('register') }}">
+                        @csrf
 
-  <!-- Horizontal navigation-->
-  <div class="app-content content">
-    <div class="content-wrapper">
+                        <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
-      <div class="content-body">
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
-        <!-- Form wizard with step validation section start -->
-        <section id="validation">
-          <div class="row justify-content-md-center">
-            <div class="col-6">
-
-
-            <div class="card" style="height: 838px;">
-                <div class="card-header">
-                  <h4 class="card-title" id="basic-layout-round-controls">تسجيل موظف جديد</h4>
-                  <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
-                  <div class="heading-elements">
-                    <ul class="list-inline mb-0">
-                      <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
-                      <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
-                      <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
-                      <li><a data-action="close"><i class="ft-x"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="card-content collapse show">
-                  <div class="card-body">
-                    <div class="card-text">
-                    <h4 class="form-section"><i class="ft-user"></i>معلومات الموظف  </h4>
-                    <hr>
-                      <p></p>
-                    </div>
-                    <form class="form">
-
-                    <div class="form-body">
-                        <div class="form-group">
-                          <label for="issueinput1">الاسم</label>
-                          <input type="text" id="issueinput1" class="form-control" placeholder="اسم الموظف" name="issuetitle" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Issue Title" data-original-title="" title="">
-                        </div>
-                        <div class="form-group">
-                          <label for="issueinput2">الهاتف</label>
-                          <input type="text" id="issueinput2" class="form-control" placeholder="هاتف الموظف" name="openedby" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="">
-                        </div>
-                        <div class="form-group">
-                          <label for="issueinput2">البريد الالكتروني</label>
-                          <input type="text" id="issueinput2" class="form-control" placeholder="البريدالالكتروني" name="openedby" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="">
-                        </div>
-                        <div class="form-group">
-                          <label for="issueinput2">اسم المستخدم</label>
-                          <input type="text" id="issueinput2" class="form-control" placeholder="اسم المستخدم" name="openedby" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="">
+                                @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
                         </div>
 
-                        <div class="form-group">
-                          <label for="issueinput2">كلمة المرور</label>
-                          <input type="text" id="issueinput2" class="form-control" placeholder="كلمة المرور" name="openedby" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Opened By" data-original-title="" title="">
+                        <div class="form-group row">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
-                       
-                          <div class="form-group">
-                          <label for="issueinput5">نوع الموظف</label>
-                          <select id="issueinput5" name="priority" class="form-control" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Priority" data-original-title="" title="">
-                            <option value="low">SuperAdmin</option>
-                            <option value="medium">Admin</option>
-                          </select>
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
                         </div>
 
-                        
-                      </div>
-                      <div class="form-actions">
-                        <button type="submit" class="btn btn-primary">
-                          <i class="fa fa-check-square-o"></i> حفظ
-                        </button>
-                      </div>
+                        <div class="form-group row">
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Register') }}
+                                </button>
+                            </div>
+                        </div>
                     </form>
-                  </div>
                 </div>
-              </div>
-
             </div>
-          </div>
-        </section>
-        <!-- Form wizard with step validation section end -->
-
-
-
-        
-      </div>
+        </div>
     </div>
-  </div>
-
-
-
-
-
-
-  @endsection
+</div>
+@endsection
+*/
