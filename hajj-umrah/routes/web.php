@@ -28,10 +28,17 @@ Route::PUT('employee/{id}/password', 'EmployeeController@updatepassword')->name(
 
 
 
-//Route::get('dashoard', function(){
+
+Route::resource('cpanel', 'CpanelController');
+
+// Route::get('dashoard', function(){
+//      return view('admin.dashboard.index');
+
+
+// Route::get('cpanel', function(){
 //     return view('admin.dashboard.index');
 
-//})->name('dash');
+// })->name('cpanel');
 
 // Route::get('arrival', function(){
 //     return view('admin.dashboard.arrival.create');

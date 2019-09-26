@@ -4,6 +4,15 @@
 @section('content')
 
 
+<?php 
+
+  if(@$_GET['trip']){
+
+   $trip_get = $_GET['trip'];
+  }
+
+?>
+
   <!-- Horizontal navigation-->
   <div class="app-content content">
     <div class="content-wrapper">
@@ -42,6 +51,7 @@
 
                     
                     <input name="id" type="text" value="{{$_GET['id']}}" hidden>
+                    <input name="trip_get" type="text" value="{{@$trip_get}}" hidden>
                         <div class="form-group">
                           <label for="issueinput1">اسم الشركة </label>
                           <input type="text" id="issueinput1" class="form-control" placeholder="اسم الشركة" name="name" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Issue Title" data-original-title="" title="" required>

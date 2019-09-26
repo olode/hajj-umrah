@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use App\Model\Trip;
+
 
 class HomeController extends Controller
 {
@@ -24,6 +26,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('/admin/dashboard/index');
+        $trips = Trip::all();
+       
+        return view('admin.dashboard.index',compact('trips'));
     }
 }

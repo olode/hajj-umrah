@@ -53,6 +53,7 @@ class TrackingMovementController extends Controller
    */
   public function store(Request $request)
   {
+   
 
     TransportCompany::create(['name'=>$request->name, 
                               'trip_id'=>$request->id, 
@@ -72,11 +73,21 @@ class TrackingMovementController extends Controller
         $trip->save();
 
 
-    
+    if($request->trip_get != null){
+      
+      $trips = Trip::all();
 
-        $trips = Trip::Select('id', 'trip_info_id', 'trip_type_id', 'wakeel_name', 'pilgram_count', 'nationality', 'hotel', 'direction_id', 'time', 'date', 'trip_number', 'advance_standby', 'day', 'completed')
-                              ->where('date', date('Y-m-d'))->get();
-          return view('admin.dashboard.tracking-movement.index',compact('trips'));
+      return view('admin.dashboard.trip.index', compact('trips'));
+    }else{
+
+
+      $trips = Trip::Select('id', 'trip_info_id', 'trip_type_id', 'wakeel_name', 'pilgram_count', 'nationality', 'hotel', 'direction_id', 'time', 'date', 'trip_number', 'advance_standby', 'day', 'completed')
+      ->where('date', date('Y-m-d'))->get();
+      return view('admin.dashboard.tracking-movement.index',compact('trips'));
+
+    }
+
+
     
   }
 

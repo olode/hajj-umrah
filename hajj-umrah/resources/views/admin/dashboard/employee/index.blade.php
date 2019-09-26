@@ -57,7 +57,7 @@
                               <td>{{$employee->phone_number}}</td>
                               <td>{{$employee->email}}</td>
                               <td>{{$employee->username}}</td>
-                              <td>{{$employee->rule_id}}</td>
+                              <td>{{$employee->role_id}}</td>
                               <td>
                               <form style=" display:inline " action="{{ route('employee.edit', $employee->id) }}" method="get"><button type="submit" class="badge badge-warning">تعديل</button></form>
                               <form style=" display:inline " action="{{ route('employee.destroy', $employee->id) }}" method="post"> @csrf @method('DELETE') <button type="submit" class="badge badge-danger">حذف</button></form>
