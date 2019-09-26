@@ -45,7 +45,8 @@
                             <div class="form-group">
                                 <label for="issueinput5">نوع التحرك</label>
                                 <select  id="issueinput5" name="trip_type_id" class="form-control" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Priority" data-original-title="" title="" required>
-                                @foreach($trip_types as $trip_type)
+                                  <option></option>
+                                  @foreach($trip_types as $trip_type)
                                 <option value="{{$trip_type->id}}">{{$trip_type->type}}</option>
                                 @endforeach
                                 </select>
