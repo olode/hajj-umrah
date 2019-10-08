@@ -18,9 +18,10 @@ data-open="hover" data-menu="horizontal-menu" data-col="2-columns">
 
 
   @yield('content')
-
+  @include('sweetalert::alert')
 @include('admin.dashboard.includes.footer')
 @include('admin.dashboard.includes.js')
+
   
   <!-- ////////////////////////////////////////////////////////////////////////////-->
 

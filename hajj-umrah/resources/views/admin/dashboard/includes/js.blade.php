@@ -1,8 +1,8 @@
 
 
 
-  <!-- BEGIN VENDOR JS-->
-<script src="{{asset('dashboard/app-assets/vendors/js/vendors.min.js')}}" type="text/javascript"></script>
+  <!-- BEGIN VENDOR JS -->
+  <script src="{{asset('dashboard/app-assets/vendors/js/vendors.min.js')}}" type="text/javascript"></script>
   <!-- BEGIN VENDOR JS-->
   <!-- BEGIN PAGE VENDOR JS-->
   <script type="text/javascript" src="{{asset('dashboard/app-assets/vendors/js/ui/jquery.sticky.js')}}"></script>
@@ -23,8 +23,10 @@
   <script src="{{asset('dashboard/app-assets/js/scripts/customizer.js')}}" type="text/javascript"></script>
   <!-- END ROBUST JS-->
   <!-- BEGIN PAGE LEVEL JS-->
-  <script type="text/javascript" src="app-assets/js/scripts/ui/breadcrumbs-with-stats.js')}}"></script>
+  <script type="text/javascript" src="{{asset('dashboard/app-assets/js/scripts/ui/breadcrumbs-with-stats.js')}}"></script>
   <script src="{{asset('dashboard/app-assets/js/scripts/tables/datatables/datatable-advanced.js')}}"
   type="text/javascript"></script>
+  
   <!-- END PAGE LEVEL JS-->
+
 

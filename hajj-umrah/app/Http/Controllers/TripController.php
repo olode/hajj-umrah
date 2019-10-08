@@ -10,6 +10,7 @@ use App\Model\Direction;
 use App\Model\TripType;
 use App\Model\TripInfo;
 use App\Model\Trip;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class TripController extends Controller 
 {
@@ -67,7 +68,10 @@ class TripController extends Controller
                     'advance_standby'=>$request->advance_standby, 
                     'trip_number'=>$request->trip_number ]);
 
+
+      Alert::success('تمت العملية بنجاح', 'تم إصافة تحرك جديد');
       return redirect()->back();
+
     // $directions = Direction::Select('id', 'name')->get();
     // return view('admin.dashboard.arrival.create')->with('directions', $directions);
 
@@ -178,6 +182,7 @@ class TripController extends Controller
       $trip->save();
 
       $trips = Trip::all();
+      Alert::success('تمت العملية بنجاح', 'تم التعديل');
       return view('admin.dashboard.trip.index', compact('trips'));
 
     }

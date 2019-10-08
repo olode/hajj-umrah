@@ -8,6 +8,8 @@ use App\Model\Representative;
 use App\Model\Direction;
 use App\Model\TripInfo;
 use App\Model\Trip;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 
 class TrackingMovementController extends Controller 
@@ -54,21 +56,23 @@ class TrackingMovementController extends Controller
   public function store(Request $request)
   {
    
+    //dd($request->all());
 
     TransportCompany::create(['name'=>$request->name, 
-                              'trip_id'=>$request->id, 
+                              'trip_id'=>$request->trip_id, 
                               'driver_name'=>$request->driver_name, 
                               'driver_id'=>$request->driver_id, 
                               'phone'=>$request->phone, 
                               'car_plate'=>$request->car_plate ]);
 
-       Representative::create(['trip_id'=>$request->id, 
+       Representative::create(['trip_id'=>$request->trip_id, 
                               'name'=>$request->representative_name, 
                               'phone'=>$request->representative_phone, 
                               'recipient'=>$request->recipient_name, 
                               'terminator'=>$request->terminator  ]);
                               
-        $trip = Trip::Find($request->id);
+        $trip = Trip::Find($request->trip_id);
+        //dd($trip);
         $trip->completed = 1;
         $trip->save();
 
@@ -83,6 +87,7 @@ class TrackingMovementController extends Controller
 
       $trips = Trip::Select('id', 'trip_info_id', 'trip_type_id', 'wakeel_name', 'pilgram_count', 'nationality', 'hotel', 'direction_id', 'time', 'date', 'trip_number', 'advance_standby', 'day', 'completed')
       ->where('date', date('Y-m-d'))->get();
+      Alert::success('تمت العملية بنجاح', 'تم إصافة معلومات النقل ');
       return view('admin.dashboard.tracking-movement.index',compact('trips'));
 
     }

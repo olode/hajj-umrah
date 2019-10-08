@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Input;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class EmployeeController extends Controller
 {
@@ -88,6 +89,7 @@ class EmployeeController extends Controller
         //dd($request->all());
         $user = User::findOrfail($id);
         $user->update($request->all());
+        Alert::success('تمت العملية بنجاح', 'تم التعديل');
         return redirect('employee');
     }
 
@@ -100,6 +102,7 @@ class EmployeeController extends Controller
         $user->update([
             'password'=> $hashedpassword,
         ]);
+        Alert::success('تمت العملية بنجاح', 'تم التعديل');
         return redirect('employee');
     }
 

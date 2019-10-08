@@ -50,7 +50,7 @@
                     <div class="form-body">
 
                     
-                    <input name="id" type="text" value="{{$_GET['id']}}" hidden>
+                    <input name="trip_id" type="text" value="{{$_GET['id']}}" hidden>
                     <input name="trip_get" type="text" value="{{@$trip_get}}" hidden>
                         <div class="form-group">
                           <label for="issueinput1">اسم الشركة </label>
