@@ -89,6 +89,7 @@
                           <div class="form-group">
                           <label for="issueinput5">الإتجاه</label>
                             <select id="issueinput5" name="direction_id" class="form-control" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Priority" data-original-title="" title="" required>
+                              <option value=""></option>
                               @foreach($directions as $direction)
                               <option value="{{$direction->id}}">{{$direction->name}}</option>
                               @endforeach
@@ -100,6 +101,7 @@
                           <div class="form-group">
                           <label for="issueinput5">اليوم</label>
                           <select id="issueinput5" name="day" class="form-control" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Priority" data-original-title="" title="" required>
+                            <option value=""></option>
                             <option value="السبت">السبت</option>
                             <option value="الأحد">الأحد</option>
                             <option value="الاثنين">الاثنين</option>

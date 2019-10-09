@@ -4,7 +4,7 @@
         <ul class="nav navbar-nav flex-row">
           <li class="nav-item mobile-menu d-md-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu font-large-1"></i></a></li>
           <li class="nav-item">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="/">
              {{-- <img class="brand-logo" alt="robust admin logo" src="{{asset('dashboard/app-assets/images/logo/logopic.jpeg')}}">--}}
               <h3 class="brand-text">شركة أبناء مساعد بن حمود المطرفي</h3>
             </a>
@@ -17,17 +17,7 @@
       <div class="navbar-container content">
         <div class="collapse navbar-collapse" id="navbar-mobile">
           <ul class="nav navbar-nav mr-auto float-left">
-            <li class="nav-item d-none d-md-block"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu">         </i></a></li>
-   
-          
-            
-            <li class="nav-item d-none d-md-block"><a class="nav-link nav-link-expand" href="#"><i class="ficon ft-maximize"></i></a></li>
-            <li class="nav-item nav-search"><a class="nav-link nav-link-search" href="#"><i class="ficon ft-search"></i></a>
-              <div class="search-input">
-                <input class="input" type="text" placeholder="بحث">
-              </div>
-            </li>
-          </ul>
+            </ul>
 
 
           <ul class="nav navbar-nav float-right">

@@ -47,7 +47,9 @@
                             <th>البريد الالكتروني</th>
                             <th>اسم المستخدم</th>
                             <th>نوع المستخدم</th>
-                            <th>اعدادات</th>
+                            @if (Auth::user()->role_id === 1)
+                              <th>اعدادات</th>
+                            @endif
                           </tr>
                         </thead>
                         <tbody>
@@ -57,10 +59,18 @@
                               <td>{{$employee->phone_number}}</td>
                               <td>{{$employee->email}}</td>
                               <td>{{$employee->username}}</td>
-                              <td>{{$employee->role_id}}</td>
                               <td>
-                              <form style=" display:inline " action="{{ route('employee.edit', $employee->id) }}" method="get"><button type="submit" class="badge badge-warning">تعديل</button></form>
-                              <form style=" display:inline " action="{{ route('employee.destroy', $employee->id) }}" method="post"> @csrf @method('DELETE') <button type="submit" class="badge badge-danger">حذف</button></form>
+                                @if ($employee->role_id === 1)
+                                مشرف عام
+                                @else
+                                   مشرف 
+                                @endif
+                              </td>
+                              <td>
+                                @if (Auth::user()->role_id === 1)    
+                                  <form style=" display:inline " action="{{ route('employee.edit', $employee->id) }}" method="get"><button type="submit" class="badge badge-warning">تعديل</button></form>
+                                  <form style=" display:inline " action="{{ route('employee.destroy', $employee->id) }}" method="post"> @csrf @method('DELETE') <button type="submit" class="badge badge-danger">حذف</button></form>
+                                @endif
                               </td>
                             </tr>
                           @endforeach
@@ -72,7 +82,9 @@
                             <th>البريد الالكتروني</th>
                             <th>اسم المستخدم</th>
                             <th>نوع المستخدم</th>
-                            <th>اعدادات</th>
+                            @if (Auth::user()->role_id === 1)
+                              <th>اعدادات</th>
+                            @endif
                               
                           </tr>
                         </tfoot>

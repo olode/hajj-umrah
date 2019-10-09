@@ -34,6 +34,7 @@
                 <div class="card-content collapse show">
                   <div class="card-body card-dashboard">
                     <p class="card-text"> متابعة تحركات تاريخ  {{date('Y-m-d')}}</p>
+                    @if (count($trips)>0)
                     <table class="table table-striped table-bordered dom-jQuery-events">
                       <thead>
                         <tr>
@@ -81,6 +82,9 @@
                         </tr>
                       </tfoot>
                     </table>
+                    @else
+                      <h2 style="margin-right:15px">لم يتم إضافة تحرك</h2> 
+                    @endif
                   </div>
                 </div>
               </div>

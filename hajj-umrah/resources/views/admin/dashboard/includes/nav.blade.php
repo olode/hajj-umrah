@@ -5,7 +5,7 @@
       <!-- include includes/mixins-->
       <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
         <li class="dropdown nav-item" data-menu="dropdown">
-          <a class=" nav-link" href="{{route('cpanel.index')}}" ><i class="icon-home"></i>
+          <a class=" nav-link" href="/" ><i class="icon-home"></i>
           
             <span data-i18n="nav.dash.main">الرئيسية</span>
           </a>
