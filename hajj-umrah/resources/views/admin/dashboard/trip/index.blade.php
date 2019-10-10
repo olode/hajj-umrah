@@ -38,7 +38,7 @@
                   <div class="card-body card-dashboard">
                     <!-- <p class="card-text"> متابعة تحركات لتاريخ ٢٠١٩/٠٨/٠٥</p> -->
                     @if (count($trips)>0)
-                    <table class="table table-striped table-responsive dom-jQuery-events">
+                    <table style="width:100%" class="table table-striped table-responsive dom-jQuery-events">
                       <thead>
                         <tr>
                           <th>نوع الرحلة</th>
@@ -48,21 +48,7 @@
                           <th>الفندق</th>
                           <th>الاتجاه</th>
                           <th>اليوم</th>
-                          <th>الوقت</th>
-                          <th>التاريخ</th>
-                          <th>الاستعداد المسبق</th>
-                          <th>رقم الرحلة</th>
-                          <th>شركة النقل</th>
-                          <th>السائق</th>
-                          <th>هوية السائق</th>
-                          <th>جوال السائق</th>
-                          <th>لوحة السيارة</th>
-                          <th>مستلم الحالة</th>
-                          <th>المندوب</th>
-                          <th>جوال المندوب</th>
-                          <th>منهي الحالة</th>
                           <th> البيانات</th>
-
                           <th> اعدادات</th>
                         </tr>
                       </thead>
@@ -76,58 +62,6 @@
                           <td>{{$trip->hotel}}</td>
                           <td>{{$trip->direction->name}}</td>
                           <td>{{$trip->day}}</td>
-                          <td>{{$trip->time}}</td>
-                          <td>{{$trip->date}}</td>
-                          <td>{{$trip->advance_standby}}</td>
-                          <td>{{$trip->trip_number}}</td>
-                          <td>
-                              @if($trip->transport)
-                              {{$trip->transport->name}}
-                              @endif
-                           </td>
-                           <td>
-                              @if($trip->transport)
-                              {{$trip->transport->driver_name}}
-                              @endif
-                           </td>
-                           <td>
-                              @if($trip->transport)
-                              {{$trip->transport->driver_id}}
-                              @endif
-                           </td>
-                           <td>
-                              @if($trip->transport)
-                              {{$trip->transport->phone}}
-                              @endif
-                           </td>
-                           <td>
-                              @if($trip->transport)
-                              {{$trip->transport->car_plate}}
-                              @endif
-                           </td>
-
-                           <td>
-                              @if($trip->repersentative)
-                              {{$trip->repersentative->recipient}}
-                              @endif
-                            </td>
-                            <td>
-                              @if($trip->repersentative)
-                              {{$trip->repersentative->name}}
-                              @endif
-                            </td>
-                          <td>
-                              @if($trip->repersentative)
-                              {{$trip->repersentative->phone}}
-                              @endif
-                            </td>
-                            <td>
-                              @if($trip->repersentative)
-                              {{$trip->repersentative->terminator}}
-                              @endif
-                            </td>
-                            
-                
                           <td class="text-center">
                               <i class="{{$trip->completed == 1 ? 'ft-check-circle' :'ft-x-circle' }}"></i>
 
@@ -137,9 +71,19 @@
                                     <br>
                               <span>بيانات مكتملة</span>
                               @endif
+                          </td>
                           <td>
-                          <a href="{{route('trip.edit',$trip->id)}}" class="badge badge-warning">تعديل</a>
-                          <button class="badge badge-danger">حذف</button>
+                            <form style="display:inline;" action="{{route('trip.show',$trip->id)}}" method="get">
+                              <button style="display:inline;     margin-bottom: 4px;"  type="submit" class="badge badge-info">عرض التفاصيل</button>
+                            </form>
+                            <form style="display:inline"  action="{{route('trip.edit',$trip->id)}}" method="get">
+                                <button style="display:inline;     margin-bottom: 4px;"  type="submit" class="badge badge-warning">تعديل</button>
+                            </form>
+                            <form style="display:inline"  action="{{route('trip.destroy',$trip->id)}}" method="post">
+                              @csrf
+                              @method('DELETE')
+                                <button style="display:inline"  style="display: inline;" class="badge badge-danger">حذف</button>
+                            </form>
                           </td>
                         </tr>
                         @endforeach
@@ -153,19 +97,6 @@
                           <th>الفندق</th>
                           <th>الاتجاه</th>
                           <th>اليوم</th>
-                          <th>الوقت</th>
-                          <th>التاريخ</th>
-                          <th>الاستعداد المسبق</th>
-                          <th>رقم الرحلة</th>
-                          <th>شركة النقل</th>
-                          <th>السائق</th>
-                          <th>هوية السائق</th>
-                          <th>جوال السائق</th>
-                          <th>لوحة السيارة</th>
-                          <th>مستلم الحالة</th>
-                          <th>المندوب</th>
-                          <th>جوال المندوب</th>
-                          <th>منهي الحالة</th>
                           <th> البيانات</th>
                           <th> اعدادات</th>
                         </tr>

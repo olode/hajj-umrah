@@ -85,6 +85,24 @@ class TripController extends Controller
    */
   public function show($id)
   {
+      $completed = Trip::Select('completed')->where('id', $id)->first();
+      if($completed->completed == 1){
+        $trip = Trip::Find($id);
+        $transport = TransportCompany::where('trip_id', $id)->first();
+        $representative = Representative::where('trip_id', $id)->first();
+        $trip_types = TripType::Select('id', 'type')->get();
+        $directions = Direction::Select('id', 'name')->get();
+        return view('admin.dashboard.trip.show',compact('directions', 'trip_types', 'trip', 'transport', 'representative'));
+
+
+      }elseif($completed->completed == 0){
+
+        $trip = Trip::Find($id);
+        $trip_types = TripType::Select('id', 'type')->get();
+        $directions = Direction::Select('id', 'name')->get();
+      return view('admin.dashboard.trip.show',compact('directions', 'trip_types', 'trip'));
+        
+      }
     
   }
 
@@ -197,7 +215,8 @@ class TripController extends Controller
    */
   public function destroy($id)
   {
-    
+    $trip = Trip::destroy($id);
+    return redirect()->back();
   }
   
 }
